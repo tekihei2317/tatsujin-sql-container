@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  # 公式のイメージから作成
+  db:
+    image: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - ./initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: tatsujin
+  # 自作のDockerfileから作成
+  db2:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 3307:3307
+    volumes:
+      - ./initdb.d:/docker-entrypoint-initdb.d
