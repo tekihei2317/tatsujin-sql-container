@@ -13,6 +13,8 @@ DBクライアントなどから接続してお使いください。接続情報
 |localhost|3306|root|password|
 
 僕は[Sequal Ace](https://github.com/Sequel-Ace/Sequel-Ace)を使っています。他におすすめのツールがあったら教えて下さい！
+### 使用方法
+TODO
 ### 対応状況
 |章|進捗|
 |-|-|

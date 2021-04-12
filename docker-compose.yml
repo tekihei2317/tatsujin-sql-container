@@ -17,6 +17,6 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - 3307:3307
+      - 3307:3306
     volumes:
       - ./seeds:/docker-entrypoint-initdb.d
