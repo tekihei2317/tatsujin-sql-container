@@ -78,12 +78,19 @@ CREATE TABLE TestSal (
 );
 
 INSERT INTO TestSal VALUES (1, 200000);
-
 INSERT INTO TestSal VALUES (1, 300000);
-
 INSERT INTO TestSal VALUES (1, NULL);
-
 INSERT INTO TestSal VALUES (2, 200000);
+
+create table Salaries (
+  name char(32),
+  salary integer
+);
+
+insert into Salaries values('相田', 300000);
+insert into Salaries values('神埼', 270000);
+insert into Salaries values('木村', 220000);
+insert into Salaries values('斎藤', 290000);
 
 /* 条件を分岐させたUPDATE */
 CREATE TABLE SomeTable (
@@ -116,17 +123,12 @@ CREATE TABLE OpenCourses (
   PRIMARY KEY(month, course_id)
 );
 
-INSERT INTO OpenCourses VALUES (200706, 1);
-
-INSERT INTO OpenCourses VALUES (200706, 3);
-
-INSERT INTO OpenCourses VALUES (200706, 4);
-
-INSERT INTO OpenCourses VALUES (200707, 4);
-
-INSERT INTO OpenCourses VALUES (200708, 2);
-
-INSERT INTO OpenCourses VALUES (200708, 4);
+INSERT INTO OpenCourses VALUES (201806, 1);
+INSERT INTO OpenCourses VALUES (201806, 3);
+INSERT INTO OpenCourses VALUES (201806, 4);
+INSERT INTO OpenCourses VALUES (201807, 4);
+INSERT INTO OpenCourses VALUES (201808, 2);
+INSERT INTO OpenCourses VALUES (201808, 4);
 
 /* CASE式の中で集約関数を使う */
 CREATE TABLE StudentClub (
