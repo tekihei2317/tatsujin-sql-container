@@ -1,20 +1,20 @@
-/* ƒf[ƒ^‚ÌŽ•”²‚¯‚ð’T‚· */
+/* ãƒ‡ãƒ¼ã‚¿ã®æ­¯æŠœã‘ã‚’æŽ¢ã™ */
 CREATE TABLE SeqTbl
 (seq  INTEGER PRIMARY KEY,
  name VARCHAR(16) NOT NULL);
 
-INSERT INTO SeqTbl VALUES(1,	'ƒfƒBƒbƒN');
-INSERT INTO SeqTbl VALUES(2,	'ƒAƒ“');
-INSERT INTO SeqTbl VALUES(3,	'ƒ‰ƒCƒ‹');
-INSERT INTO SeqTbl VALUES(5,	'ƒJ[');
-INSERT INTO SeqTbl VALUES(6,	'ƒ}ƒŠ[');
-INSERT INTO SeqTbl VALUES(8,	'ƒxƒ“');
+INSERT INTO SeqTbl VALUES(1,	'ãƒ‡ã‚£ãƒƒã‚¯');
+INSERT INTO SeqTbl VALUES(2,	'ã‚¢ãƒ³');
+INSERT INTO SeqTbl VALUES(3,	'ãƒ©ã‚¤ãƒ«');
+INSERT INTO SeqTbl VALUES(5,	'ã‚«ãƒ¼');
+INSERT INTO SeqTbl VALUES(6,	'ãƒžãƒªãƒ¼');
+INSERT INTO SeqTbl VALUES(8,	'ãƒ™ãƒ³');
 
--- Œ‡”Ô‚ð’T‚¹F”­“W”Å
+-- æ¬ ç•ªã‚’æŽ¢ã›ï¼šç™ºå±•ç‰ˆ
 CREATE TABLE SeqTbl
 ( seq INTEGER NOT NULL PRIMARY KEY);
 
--- Ž•”²‚¯‚È‚µFŠJŽn’l‚ª1
+-- æ­¯æŠœã‘ãªã—ï¼šé–‹å§‹å€¤ãŒ1
 DELETE FROM SeqTbl;
 INSERT INTO SeqTbl VALUES(1);
 INSERT INTO SeqTbl VALUES(2);
@@ -22,7 +22,7 @@ INSERT INTO SeqTbl VALUES(3);
 INSERT INTO SeqTbl VALUES(4);
 INSERT INTO SeqTbl VALUES(5);
 
--- Ž•”²‚¯‚ ‚èFŠJŽn’l‚ª1
+-- æ­¯æŠœã‘ã‚ã‚Šï¼šé–‹å§‹å€¤ãŒ1
 DELETE FROM SeqTbl;
 INSERT INTO SeqTbl VALUES(1);
 INSERT INTO SeqTbl VALUES(2);
@@ -30,7 +30,7 @@ INSERT INTO SeqTbl VALUES(4);
 INSERT INTO SeqTbl VALUES(5);
 INSERT INTO SeqTbl VALUES(8);
 
--- Ž•”²‚¯‚È‚µFŠJŽn’l‚ª1‚Å‚Í‚È‚¢
+-- æ­¯æŠœã‘ãªã—ï¼šé–‹å§‹å€¤ãŒ1ã§ã¯ãªã„
 DELETE FROM SeqTbl;
 INSERT INTO SeqTbl VALUES(3);
 INSERT INTO SeqTbl VALUES(4);
@@ -38,7 +38,7 @@ INSERT INTO SeqTbl VALUES(5);
 INSERT INTO SeqTbl VALUES(6);
 INSERT INTO SeqTbl VALUES(7);
 
--- Ž•”²‚¯‚ ‚èFŠJŽn’l‚ª1‚Å‚Í‚È‚¢
+-- æ­¯æŠœã‘ã‚ã‚Šï¼šé–‹å§‹å€¤ãŒ1ã§ã¯ãªã„
 DELETE FROM SeqTbl;
 INSERT INTO SeqTbl VALUES(3);
 INSERT INTO SeqTbl VALUES(4);
@@ -50,16 +50,16 @@ CREATE TABLE Graduates
 (name   VARCHAR(16) PRIMARY KEY,
  income INTEGER NOT NULL);
 
-INSERT INTO Graduates VALUES('ƒTƒ“ƒvƒ\ƒ“', 400000);
-INSERT INTO Graduates VALUES('ƒ}ƒCƒN',     30000);
-INSERT INTO Graduates VALUES('ƒzƒƒCƒg',   20000);
-INSERT INTO Graduates VALUES('ƒA[ƒmƒ‹ƒh', 20000);
-INSERT INTO Graduates VALUES('ƒXƒ~ƒX',     20000);
-INSERT INTO Graduates VALUES('ƒƒŒƒ“ƒX',   15000);
-INSERT INTO Graduates VALUES('ƒnƒhƒ\ƒ“',   15000);
-INSERT INTO Graduates VALUES('ƒPƒ“ƒg',     10000);
-INSERT INTO Graduates VALUES('ƒxƒbƒJ[',   10000);
-INSERT INTO Graduates VALUES('ƒXƒRƒbƒg',   10000);
+INSERT INTO Graduates VALUES('ã‚µãƒ³ãƒ—ã‚½ãƒ³', 400000);
+INSERT INTO Graduates VALUES('ãƒžã‚¤ã‚¯',     30000);
+INSERT INTO Graduates VALUES('ãƒ›ãƒ¯ã‚¤ãƒˆ',   20000);
+INSERT INTO Graduates VALUES('ã‚¢ãƒ¼ãƒŽãƒ«ãƒ‰', 20000);
+INSERT INTO Graduates VALUES('ã‚¹ãƒŸã‚¹',     20000);
+INSERT INTO Graduates VALUES('ãƒ­ãƒ¬ãƒ³ã‚¹',   15000);
+INSERT INTO Graduates VALUES('ãƒãƒ‰ã‚½ãƒ³',   15000);
+INSERT INTO Graduates VALUES('ã‚±ãƒ³ãƒˆ',     10000);
+INSERT INTO Graduates VALUES('ãƒ™ãƒƒã‚«ãƒ¼',   10000);
+INSERT INTO Graduates VALUES('ã‚¹ã‚³ãƒƒãƒˆ',   10000);
 
 CREATE TABLE NullTbl (col_1 INTEGER);
 
@@ -67,84 +67,84 @@ INSERT INTO NullTbl VALUES (NULL);
 INSERT INTO NullTbl VALUES (NULL);
 INSERT INTO NullTbl VALUES (NULL);
 
-/* NULL ‚ðŠÜ‚Ü‚È‚¢W‡‚ð’T‚· */
+/* NULL ã‚’å«ã¾ãªã„é›†åˆã‚’æŽ¢ã™ */
 CREATE TABLE Students
 (student_id   INTEGER PRIMARY KEY,
  dpt          VARCHAR(16) NOT NULL,
  sbmt_date    DATE);
 
-INSERT INTO Students VALUES(100,  '—Šw•”',   '2018-10-10');
-INSERT INTO Students VALUES(101,  '—Šw•”',   '2018-09-22');
-INSERT INTO Students VALUES(102,  '•¶Šw•”',   NULL);
-INSERT INTO Students VALUES(103,  '•¶Šw•”',   '2018-09-10');
-INSERT INTO Students VALUES(200,  '•¶Šw•”',   '2018-09-22');
-INSERT INTO Students VALUES(201,  'HŠw•”',   NULL);
-INSERT INTO Students VALUES(202,  'ŒoÏŠw•”', '2018-09-25');
+INSERT INTO Students VALUES(100,  'ç†å­¦éƒ¨',   '2018-10-10');
+INSERT INTO Students VALUES(101,  'ç†å­¦éƒ¨',   '2018-09-22');
+INSERT INTO Students VALUES(102,  'æ–‡å­¦éƒ¨',   NULL);
+INSERT INTO Students VALUES(103,  'æ–‡å­¦éƒ¨',   '2018-09-10');
+INSERT INTO Students VALUES(200,  'æ–‡å­¦éƒ¨',   '2018-09-22');
+INSERT INTO Students VALUES(201,  'å·¥å­¦éƒ¨',   NULL);
+INSERT INTO Students VALUES(202,  'çµŒæ¸ˆå­¦éƒ¨', '2018-09-25');
 
--- W‡‚É‚«‚ß×‚©‚ÈðŒ‚ðÝ’è‚·‚é
+-- é›†åˆã«ãã‚ç´°ã‹ãªæ¡ä»¶ã‚’è¨­å®šã™ã‚‹
 CREATE TABLE TestResults
 (student_id CHAR(12) NOT NULL PRIMARY KEY,
  class   CHAR(1)  NOT NULL,
  sex     CHAR(1)  NOT NULL,
  score   INTEGER  NOT NULL);
 
-INSERT INTO TestResults VALUES('001', 'A', '’j', 100);
-INSERT INTO TestResults VALUES('002', 'A', '—', 100);
-INSERT INTO TestResults VALUES('003', 'A', '—',  49);
-INSERT INTO TestResults VALUES('004', 'A', '’j',  30);
-INSERT INTO TestResults VALUES('005', 'B', '—', 100);
-INSERT INTO TestResults VALUES('006', 'B', '’j',  92);
-INSERT INTO TestResults VALUES('007', 'B', '’j',  80);
-INSERT INTO TestResults VALUES('008', 'B', '’j',  80);
-INSERT INTO TestResults VALUES('009', 'B', '—',  10);
-INSERT INTO TestResults VALUES('010', 'C', '’j',  92);
-INSERT INTO TestResults VALUES('011', 'C', '’j',  80);
-INSERT INTO TestResults VALUES('012', 'C', '—',  21);
-INSERT INTO TestResults VALUES('013', 'D', '—', 100);
-INSERT INTO TestResults VALUES('014', 'D', '—',   0);
-INSERT INTO TestResults VALUES('015', 'D', '—',   0);
+INSERT INTO TestResults VALUES('001', 'A', 'ç”·', 100);
+INSERT INTO TestResults VALUES('002', 'A', 'å¥³', 100);
+INSERT INTO TestResults VALUES('003', 'A', 'å¥³',  49);
+INSERT INTO TestResults VALUES('004', 'A', 'ç”·',  30);
+INSERT INTO TestResults VALUES('005', 'B', 'å¥³', 100);
+INSERT INTO TestResults VALUES('006', 'B', 'ç”·',  92);
+INSERT INTO TestResults VALUES('007', 'B', 'ç”·',  80);
+INSERT INTO TestResults VALUES('008', 'B', 'ç”·',  80);
+INSERT INTO TestResults VALUES('009', 'B', 'å¥³',  10);
+INSERT INTO TestResults VALUES('010', 'C', 'ç”·',  92);
+INSERT INTO TestResults VALUES('011', 'C', 'ç”·',  80);
+INSERT INTO TestResults VALUES('012', 'C', 'å¥³',  21);
+INSERT INTO TestResults VALUES('013', 'D', 'å¥³', 100);
+INSERT INTO TestResults VALUES('014', 'D', 'å¥³',   0);
+INSERT INTO TestResults VALUES('015', 'D', 'å¥³',   0);
 
 CREATE TABLE Teams
 (member  CHAR(12) NOT NULL PRIMARY KEY,
  team_id INTEGER  NOT NULL,
  status  CHAR(8)  NOT NULL);
 
-INSERT INTO Teams VALUES('ƒWƒ‡[',   1, '‘Ò‹@');
-INSERT INTO Teams VALUES('ƒPƒ“',     1, 'o“®’†');
-INSERT INTO Teams VALUES('ƒ~ƒbƒN',   1, '‘Ò‹@');
-INSERT INTO Teams VALUES('ƒJƒŒƒ“',   2, 'o“®’†');
-INSERT INTO Teams VALUES('ƒL[ƒX',   2, '‹x‰É');
-INSERT INTO Teams VALUES('ƒWƒƒƒ“',   3, '‘Ò‹@');
-INSERT INTO Teams VALUES('ƒn[ƒg',   3, '‘Ò‹@');
-INSERT INTO Teams VALUES('ƒfƒBƒbƒN', 3, '‘Ò‹@');
-INSERT INTO Teams VALUES('ƒxƒX',     4, '‘Ò‹@');
-INSERT INTO Teams VALUES('ƒAƒŒƒ“',   5, 'o“®’†');
-INSERT INTO Teams VALUES('ƒƒo[ƒg', 5, '‹x‰É');
-INSERT INTO Teams VALUES('ƒP[ƒKƒ“', 5, '‘Ò‹@');
+INSERT INTO Teams VALUES('ã‚¸ãƒ§ãƒ¼',   1, 'å¾…æ©Ÿ');
+INSERT INTO Teams VALUES('ã‚±ãƒ³',     1, 'å‡ºå‹•ä¸­');
+INSERT INTO Teams VALUES('ãƒŸãƒƒã‚¯',   1, 'å¾…æ©Ÿ');
+INSERT INTO Teams VALUES('ã‚«ãƒ¬ãƒ³',   2, 'å‡ºå‹•ä¸­');
+INSERT INTO Teams VALUES('ã‚­ãƒ¼ã‚¹',   2, 'ä¼‘æš‡');
+INSERT INTO Teams VALUES('ã‚¸ãƒ£ãƒ³',   3, 'å¾…æ©Ÿ');
+INSERT INTO Teams VALUES('ãƒãƒ¼ãƒˆ',   3, 'å¾…æ©Ÿ');
+INSERT INTO Teams VALUES('ãƒ‡ã‚£ãƒƒã‚¯', 3, 'å¾…æ©Ÿ');
+INSERT INTO Teams VALUES('ãƒ™ã‚¹',     4, 'å¾…æ©Ÿ');
+INSERT INTO Teams VALUES('ã‚¢ãƒ¬ãƒ³',   5, 'å‡ºå‹•ä¸­');
+INSERT INTO Teams VALUES('ãƒ­ãƒãƒ¼ãƒˆ', 5, 'ä¼‘æš‡');
+INSERT INTO Teams VALUES('ã‚±ãƒ¼ã‚¬ãƒ³', 5, 'å¾…æ©Ÿ');
 
--- ˆêˆÓW‡‚Æ‘½dW‡
+-- ä¸€æ„é›†åˆã¨å¤šé‡é›†åˆ
 CREATE TABLE Materials
 (center         CHAR(12) NOT NULL,
  receive_date   DATE     NOT NULL,
  material       CHAR(12) NOT NULL,
  PRIMARY KEY(center, receive_date));
 
-INSERT INTO Materials VALUES('“Œ‹ž'	,'2018-4-01',	'Žà');
-INSERT INTO Materials VALUES('“Œ‹ž'	,'2018-4-12',	'ˆŸ‰”');
-INSERT INTO Materials VALUES('“Œ‹ž'	,'2018-5-17',	'ƒAƒ‹ƒ~ƒjƒEƒ€');
-INSERT INTO Materials VALUES('“Œ‹ž'	,'2018-5-20',	'ˆŸ‰”');
-INSERT INTO Materials VALUES('‘åã'	,'2018-4-20',	'“º');
-INSERT INTO Materials VALUES('‘åã'	,'2018-4-22',	'ƒjƒbƒPƒ‹');
-INSERT INTO Materials VALUES('‘åã'	,'2018-4-29',	'‰”');
-INSERT INTO Materials VALUES('–¼ŒÃ‰®',	'2018-3-15',	'ƒ`ƒ^ƒ“');
-INSERT INTO Materials VALUES('–¼ŒÃ‰®',	'2018-4-01',	'’Y‘f|');
-INSERT INTO Materials VALUES('–¼ŒÃ‰®',	'2018-4-24',	'’Y‘f|');
-INSERT INTO Materials VALUES('–¼ŒÃ‰®',	'2018-5-02',	'ƒ}ƒOƒlƒVƒEƒ€');
-INSERT INTO Materials VALUES('–¼ŒÃ‰®',	'2018-5-10',	'ƒ`ƒ^ƒ“');
-INSERT INTO Materials VALUES('•Ÿ‰ª'	,'2018-5-10',	'ˆŸ‰”');
-INSERT INTO Materials VALUES('•Ÿ‰ª'	,'2018-5-28',	'Žà');
+INSERT INTO Materials VALUES('æ±äº¬'	,'2018-4-01',	'éŒ«');
+INSERT INTO Materials VALUES('æ±äº¬'	,'2018-4-12',	'äºœé‰›');
+INSERT INTO Materials VALUES('æ±äº¬'	,'2018-5-17',	'ã‚¢ãƒ«ãƒŸãƒ‹ã‚¦ãƒ ');
+INSERT INTO Materials VALUES('æ±äº¬'	,'2018-5-20',	'äºœé‰›');
+INSERT INTO Materials VALUES('å¤§é˜ª'	,'2018-4-20',	'éŠ…');
+INSERT INTO Materials VALUES('å¤§é˜ª'	,'2018-4-22',	'ãƒ‹ãƒƒã‚±ãƒ«');
+INSERT INTO Materials VALUES('å¤§é˜ª'	,'2018-4-29',	'é‰›');
+INSERT INTO Materials VALUES('åå¤å±‹',	'2018-3-15',	'ãƒã‚¿ãƒ³');
+INSERT INTO Materials VALUES('åå¤å±‹',	'2018-4-01',	'ç‚­ç´ é‹¼');
+INSERT INTO Materials VALUES('åå¤å±‹',	'2018-4-24',	'ç‚­ç´ é‹¼');
+INSERT INTO Materials VALUES('åå¤å±‹',	'2018-5-02',	'ãƒžã‚°ãƒã‚·ã‚¦ãƒ ');
+INSERT INTO Materials VALUES('åå¤å±‹',	'2018-5-10',	'ãƒã‚¿ãƒ³');
+INSERT INTO Materials VALUES('ç¦å²¡'	,'2018-5-10',	'äºœé‰›');
+INSERT INTO Materials VALUES('ç¦å²¡'	,'2018-5-28',	'éŒ«');
 
-/* ŠÖŒWœŽZ‚ÅƒoƒXƒPƒbƒg‰ðÍ */
+/* é–¢ä¿‚é™¤ç®—ã§ãƒã‚¹ã‚±ãƒƒãƒˆè§£æž */
 CREATE TABLE Items
 (item VARCHAR(16) PRIMARY KEY);
  
@@ -153,17 +153,17 @@ CREATE TABLE ShopItems
  item VARCHAR(16),
     PRIMARY KEY(shop, item));
 
-INSERT INTO Items VALUES('ƒr[ƒ‹');
-INSERT INTO Items VALUES('Ž†ƒIƒ€ƒc');
-INSERT INTO Items VALUES('Ž©“]ŽÔ');
+INSERT INTO Items VALUES('ãƒ“ãƒ¼ãƒ«');
+INSERT INTO Items VALUES('ç´™ã‚ªãƒ ãƒ„');
+INSERT INTO Items VALUES('è‡ªè»¢è»Š');
 
-INSERT INTO ShopItems VALUES('å‘ä',  'ƒr[ƒ‹');
-INSERT INTO ShopItems VALUES('å‘ä',  'Ž†ƒIƒ€ƒc');
-INSERT INTO ShopItems VALUES('å‘ä',  'Ž©“]ŽÔ');
-INSERT INTO ShopItems VALUES('å‘ä',  'ƒJ[ƒeƒ“');
-INSERT INTO ShopItems VALUES('“Œ‹ž',  'ƒr[ƒ‹');
-INSERT INTO ShopItems VALUES('“Œ‹ž',  'Ž†ƒIƒ€ƒc');
-INSERT INTO ShopItems VALUES('“Œ‹ž',  'Ž©“]ŽÔ');
-INSERT INTO ShopItems VALUES('‘åã',  'ƒeƒŒƒr');
-INSERT INTO ShopItems VALUES('‘åã',  'Ž†ƒIƒ€ƒc');
-INSERT INTO ShopItems VALUES('‘åã',  'Ž©“]ŽÔ');
+INSERT INTO ShopItems VALUES('ä»™å°',  'ãƒ“ãƒ¼ãƒ«');
+INSERT INTO ShopItems VALUES('ä»™å°',  'ç´™ã‚ªãƒ ãƒ„');
+INSERT INTO ShopItems VALUES('ä»™å°',  'è‡ªè»¢è»Š');
+INSERT INTO ShopItems VALUES('ä»™å°',  'ã‚«ãƒ¼ãƒ†ãƒ³');
+INSERT INTO ShopItems VALUES('æ±äº¬',  'ãƒ“ãƒ¼ãƒ«');
+INSERT INTO ShopItems VALUES('æ±äº¬',  'ç´™ã‚ªãƒ ãƒ„');
+INSERT INTO ShopItems VALUES('æ±äº¬',  'è‡ªè»¢è»Š');
+INSERT INTO ShopItems VALUES('å¤§é˜ª',  'ãƒ†ãƒ¬ãƒ“');
+INSERT INTO ShopItems VALUES('å¤§é˜ª',  'ç´™ã‚ªãƒ ãƒ„');
+INSERT INTO ShopItems VALUES('å¤§é˜ª',  'è‡ªè»¢è»Š');

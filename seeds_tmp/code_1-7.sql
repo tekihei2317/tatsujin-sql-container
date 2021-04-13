@@ -1,4 +1,4 @@
--- ¬’·EŒã‘ŞEŒ»óˆÛ
+-- æˆé•·ãƒ»å¾Œé€€ãƒ»ç¾çŠ¶ç¶­æŒ
 CREATE TABLE Sales
 (year INTEGER NOT NULL , 
  sale INTEGER NOT NULL ,
@@ -13,7 +13,7 @@ INSERT INTO Sales VALUES (1995, 50);
 INSERT INTO Sales VALUES (1996, 49);
 INSERT INTO Sales VALUES (1997, 55);
 
--- Œn—ñ‚É•”²‚¯‚ª‚ ‚éê‡F’¼‹ß‚Æ”äŠr
+-- æ™‚ç³»åˆ—ã«æ­¯æŠœã‘ãŒã‚ã‚‹å ´åˆï¼šç›´è¿‘ã¨æ¯”è¼ƒ
 CREATE TABLE Sales2
 (year INTEGER NOT NULL , 
  sale INTEGER NOT NULL , 
@@ -26,7 +26,7 @@ INSERT INTO Sales2 VALUES (1994, 55);
 INSERT INTO Sales2 VALUES (1997, 55);
 
 
--- ‘O”N‚Æ”N¤‚ª“¯‚¶”N“x‚ğ‹‚ß‚éF‚»‚Ì1@‘ŠŠÖƒTƒuƒNƒGƒŠ‚Ì—˜—p
+-- å‰å¹´ã¨å¹´å•†ãŒåŒã˜å¹´åº¦ã‚’æ±‚ã‚ã‚‹ï¼šãã®1ã€€ç›¸é–¢ã‚µãƒ–ã‚¯ã‚¨ãƒªã®åˆ©ç”¨
 SELECT year,sale
   FROM Sales S1
  WHERE sale = (SELECT sale
@@ -35,7 +35,7 @@ SELECT year,sale
  ORDER BY year;
 
 
--- ‘O”N‚Æ”N¤‚ª“¯‚¶”N“x‚ğ‹‚ß‚éF‚»‚Ì2@ƒEƒBƒ“ƒhƒEŠÖ”‚Ì—˜—p
+-- å‰å¹´ã¨å¹´å•†ãŒåŒã˜å¹´åº¦ã‚’æ±‚ã‚ã‚‹ï¼šãã®2ã€€ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦é–¢æ•°ã®åˆ©ç”¨
 SELECT year, current_sale
   FROM (SELECT year,
                sale AS current_sale,
@@ -54,14 +54,14 @@ SELECT year,
   FROM Sales;
 
 
--- ¬’·AŒã‘ŞAŒ»óˆÛ‚ğˆê“x‚É‹‚ß‚éF‚»‚Ì1@‘ŠŠÖƒTƒuƒNƒGƒŠ‚Ì—˜—p
+-- æˆé•·ã€å¾Œé€€ã€ç¾çŠ¶ç¶­æŒã‚’ä¸€åº¦ã«æ±‚ã‚ã‚‹ï¼šãã®1ã€€ç›¸é–¢ã‚µãƒ–ã‚¯ã‚¨ãƒªã®åˆ©ç”¨
 SELECT year, current_sale AS sale,
        CASE WHEN current_sale = pre_sale
-              THEN '¨'
+              THEN 'â†’'
             WHEN current_sale > pre_sale
-              THEN 'ª'
+              THEN 'â†‘'
             WHEN current_sale < pre_sale
-              THEN '«'
+              THEN 'â†“'
             ELSE '-' END AS var
   FROM (SELECT year,
                sale AS current_sale,
@@ -72,14 +72,14 @@ SELECT year, current_sale AS sale,
  ORDER BY year;
 
 
--- ¬’·AŒã‘ŞAŒ»óˆÛ‚ğˆê“x‚É‹‚ß‚éF‚»‚Ì2@ƒEƒBƒ“ƒhƒEŠÖ”‚Ì—˜—p
+-- æˆé•·ã€å¾Œé€€ã€ç¾çŠ¶ç¶­æŒã‚’ä¸€åº¦ã«æ±‚ã‚ã‚‹ï¼šãã®2ã€€ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦é–¢æ•°ã®åˆ©ç”¨
 SELECT year, current_sale AS sale,
        CASE WHEN current_sale = pre_sale
-             THEN '¨'
+             THEN 'â†’'
             WHEN current_sale > pre_sale
-             THEN 'ª'
+             THEN 'â†‘'
             WHEN current_sale < pre_sale
-             THEN '«'
+             THEN 'â†“'
             ELSE '-' END AS var
   FROM (SELECT year,
                sale AS current_sale,
@@ -92,20 +92,20 @@ SELECT year, current_sale AS sale,
 
 
 
--- ’¼‹ß‚Ì”N‚Æ“¯‚¶”N¤‚Ì”N‚ğ‘I‘ğ‚·‚éF‚»‚Ì1@‘ŠŠÖƒTƒuƒNƒGƒŠ
+-- ç›´è¿‘ã®å¹´ã¨åŒã˜å¹´å•†ã®å¹´ã‚’é¸æŠã™ã‚‹ï¼šãã®1ã€€ç›¸é–¢ã‚µãƒ–ã‚¯ã‚¨ãƒª
 SELECT year, sale
   FROM Sales2 S1
  WHERE sale =
          (SELECT sale
             FROM Sales2 S2
            WHERE S2.year =
-                  (SELECT MAX(year) -- ğŒ2FğŒ1‚ğ–‚½‚·”N“x‚Ì’†‚ÅÅ‘å
+                  (SELECT MAX(year) -- æ¡ä»¶2ï¼šæ¡ä»¶1ã‚’æº€ãŸã™å¹´åº¦ã®ä¸­ã§æœ€å¤§
                      FROM Sales2 S3
-                    WHERE S1.year > S3.year)) -- ğŒ1F©•ª‚æ‚è‰ß‹‚Å‚ ‚é
+                    WHERE S1.year > S3.year)) -- æ¡ä»¶1ï¼šè‡ªåˆ†ã‚ˆã‚Šéå»ã§ã‚ã‚‹
  ORDER BY year;
 
 
--- ’¼‹ß‚Ì”N‚Æ“¯‚¶”N¤‚Ì”N‚ğ‘I‘ğ‚·‚éF‚»‚Ì2@ƒEƒBƒ“ƒhƒEŠÖ”
+-- ç›´è¿‘ã®å¹´ã¨åŒã˜å¹´å•†ã®å¹´ã‚’é¸æŠã™ã‚‹ï¼šãã®2ã€€ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦é–¢æ•°
 SELECT year, current_sale
   FROM (SELECT year,
                sale AS current_sale,
@@ -119,38 +119,38 @@ SELECT year, current_sale
 
 
 
--- ƒI[ƒo[ƒ‰ƒbƒv‚·‚éŠúŠÔ‚ğ’²‚×‚é
+-- ã‚ªãƒ¼ãƒãƒ¼ãƒ©ãƒƒãƒ—ã™ã‚‹æœŸé–“ã‚’èª¿ã¹ã‚‹
 CREATE TABLE Reservations
 (reserver    VARCHAR(30) PRIMARY KEY,
  start_date  DATE  NOT NULL,
  end_date    DATE  NOT NULL);
 
-INSERT INTO Reservations VALUES('–Ø‘º', '2018-10-26', '2018-10-27');
-INSERT INTO Reservations VALUES('r–Ø', '2018-10-28', '2018-10-31');
-INSERT INTO Reservations VALUES('–x',   '2018-10-31', '2018-11-01');
-INSERT INTO Reservations VALUES('R–{', '2018-11-03', '2018-11-04');
-INSERT INTO Reservations VALUES('“à“c', '2018-11-03', '2018-11-05');
-INSERT INTO Reservations VALUES('…’J', '2018-11-06', '2018-11-06');
+INSERT INTO Reservations VALUES('æœ¨æ‘', '2018-10-26', '2018-10-27');
+INSERT INTO Reservations VALUES('è’æœ¨', '2018-10-28', '2018-10-31');
+INSERT INTO Reservations VALUES('å €',   '2018-10-31', '2018-11-01');
+INSERT INTO Reservations VALUES('å±±æœ¬', '2018-11-03', '2018-11-04');
+INSERT INTO Reservations VALUES('å†…ç”°', '2018-11-03', '2018-11-05');
+INSERT INTO Reservations VALUES('æ°´è°·', '2018-11-06', '2018-11-06');
 
---R–{‚Ì“Šh“ú‚ª4“ú‚Ìê‡
-DELETE FROM Reservations WHERE reserver = 'R–{';
-INSERT INTO Reservations VALUES('R–{', '2018-11-04', '2018-11-04');
+--å±±æœ¬æ°ã®æŠ•å®¿æ—¥ãŒ4æ—¥ã®å ´åˆ
+DELETE FROM Reservations WHERE reserver = 'å±±æœ¬';
+INSERT INTO Reservations VALUES('å±±æœ¬', '2018-11-04', '2018-11-04');
 
 
--- ƒI[ƒo[ƒ‰ƒbƒv‚·‚éŠúŠÔ‚ğ‹‚ß‚é  ‚»‚Ì1F‘ŠŠÖƒTƒuƒNƒGƒŠ‚Ì—˜—p
+-- ã‚ªãƒ¼ãƒãƒ¼ãƒ©ãƒƒãƒ—ã™ã‚‹æœŸé–“ã‚’æ±‚ã‚ã‚‹  ãã®1ï¼šç›¸é–¢ã‚µãƒ–ã‚¯ã‚¨ãƒªã®åˆ©ç”¨
 SELECT reserver, start_date, end_date
   FROM Reservations R1
  WHERE EXISTS
         (SELECT *
            FROM Reservations R2
-          WHERE R1.reserver <> R2.reserver -- ©•ªˆÈŠO‚Ì‹q‚Æ”äŠr‚·‚é
+          WHERE R1.reserver <> R2.reserver -- è‡ªåˆ†ä»¥å¤–ã®å®¢ã¨æ¯”è¼ƒã™ã‚‹
             AND ( R1.start_date BETWEEN R2.start_date AND R2.end_date
-                   -- ğŒ(1)FŠJn“ú‚ª‘¼‚ÌŠúŠÔ“à‚É‚ ‚é
+                   -- æ¡ä»¶(1)ï¼šé–‹å§‹æ—¥ãŒä»–ã®æœŸé–“å†…ã«ã‚ã‚‹
                OR R1.end_date BETWEEN R2.start_date AND R2.end_date));
-                   -- ğŒ(2)FI—¹“ú‚ª‘¼‚ÌŠúŠÔ“à‚É‚ ‚é
+                   -- æ¡ä»¶(2)ï¼šçµ‚äº†æ—¥ãŒä»–ã®æœŸé–“å†…ã«ã‚ã‚‹
 
 
--- ƒI[ƒo[ƒ‰ƒbƒv‚·‚éŠúŠÔ‚ğ‹‚ß‚é  ‚»‚Ì2FƒEƒBƒ“ƒhƒEŠÖ”‚Ì—˜—p
+-- ã‚ªãƒ¼ãƒãƒ¼ãƒ©ãƒƒãƒ—ã™ã‚‹æœŸé–“ã‚’æ±‚ã‚ã‚‹  ãã®2ï¼šã‚¦ã‚£ãƒ³ãƒ‰ã‚¦é–¢æ•°ã®åˆ©ç”¨
 SELECT reserver, next_reserver
   FROM (SELECT reserver,
                start_date,
@@ -166,27 +166,27 @@ SELECT reserver, next_reserver
 
 
 
---R–{E“à“cE…’J‚Ì3l‚ªd•¡
+--å±±æœ¬ãƒ»å†…ç”°ãƒ»æ°´è°·ã®3äººãŒé‡è¤‡
 DELETE FROM Reservations;
-INSERT INTO Reservations VALUES('–Ø‘º', '2018-10-26', '2018-10-27');
-INSERT INTO Reservations VALUES('r–Ø', '2018-10-28', '2018-10-31');
-INSERT INTO Reservations VALUES('–x',   '2018-10-31', '2018-11-01');
-INSERT INTO Reservations VALUES('R–{', '2018-11-03', '2018-11-04');
-INSERT INTO Reservations VALUES('“à“c', '2018-11-03', '2018-11-05');
-INSERT INTO Reservations VALUES('…’J', '2018-11-04', '2018-11-06');
+INSERT INTO Reservations VALUES('æœ¨æ‘', '2018-10-26', '2018-10-27');
+INSERT INTO Reservations VALUES('è’æœ¨', '2018-10-28', '2018-10-31');
+INSERT INTO Reservations VALUES('å €',   '2018-10-31', '2018-11-01');
+INSERT INTO Reservations VALUES('å±±æœ¬', '2018-11-03', '2018-11-04');
+INSERT INTO Reservations VALUES('å†…ç”°', '2018-11-03', '2018-11-05');
+INSERT INTO Reservations VALUES('æ°´è°·', '2018-11-04', '2018-11-06');
 
 
---R–{‚ğu“ú‹A‚èv‚Å“o˜^(‘ŠŠÖƒTƒuƒNƒGƒŠ‚ÌŒ‹‰Ê‚©‚ç“à“c‚ªÁ‚¦‚é)
+--å±±æœ¬æ°ã‚’ã€Œæ—¥å¸°ã‚Šã€ã§ç™»éŒ²(ç›¸é–¢ã‚µãƒ–ã‚¯ã‚¨ãƒªã®çµæœã‹ã‚‰å†…ç”°æ°ãŒæ¶ˆãˆã‚‹)
 DELETE FROM Reservations;
-INSERT INTO Reservations VALUES('–Ø‘º', '2018-10-26', '2018-10-27');
-INSERT INTO Reservations VALUES('r–Ø', '2018-10-28', '2018-10-31');
-INSERT INTO Reservations VALUES('–x',   '2018-10-31', '2018-11-01');
-INSERT INTO Reservations VALUES('R–{', '2018-11-04', '2018-11-04');
-INSERT INTO Reservations VALUES('“à“c', '2018-11-03', '2018-11-05');
-INSERT INTO Reservations VALUES('…’J', '2018-11-06', '2018-11-06');
+INSERT INTO Reservations VALUES('æœ¨æ‘', '2018-10-26', '2018-10-27');
+INSERT INTO Reservations VALUES('è’æœ¨', '2018-10-28', '2018-10-31');
+INSERT INTO Reservations VALUES('å €',   '2018-10-31', '2018-11-01');
+INSERT INTO Reservations VALUES('å±±æœ¬', '2018-11-04', '2018-11-04');
+INSERT INTO Reservations VALUES('å†…ç”°', '2018-11-03', '2018-11-05');
+INSERT INTO Reservations VALUES('æ°´è°·', '2018-11-06', '2018-11-06');
 
 
---‰‰K–â‘èF1-6
+--æ¼”ç¿’å•é¡Œï¼š1-6
 CREATE TABLE Accounts
 (prc_date DATE NOT NULL , 
  prc_amt  INTEGER NOT NULL , 

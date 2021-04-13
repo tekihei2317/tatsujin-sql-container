@@ -8,14 +8,14 @@ CREATE TABLE Shohin
  torokubi      DATE ,
      PRIMARY KEY (shohin_id));
 
-INSERT INTO Shohin VALUES ('0001', 'TƒVƒƒƒc' ,'ˆß•ž', 1000, 500, '2009-09-20');
-INSERT INTO Shohin VALUES ('0002', 'ŒŠ‚ ‚¯ƒpƒ“ƒ`', 'Ž––±—p•i', 500, 320, '2009-09-11');
-INSERT INTO Shohin VALUES ('0003', 'ƒJƒbƒ^[ƒVƒƒƒc', 'ˆß•ž', 4000, 2800, NULL);
-INSERT INTO Shohin VALUES ('0004', '•ï’š', 'ƒLƒbƒ`ƒ“—p•i', 3000, 2800, '2009-09-20');
-INSERT INTO Shohin VALUES ('0005', 'ˆ³—Í“ç', 'ƒLƒbƒ`ƒ“—p•i', 6800, 5000, '2009-01-15');
-INSERT INTO Shohin VALUES ('0006', 'ƒtƒH[ƒN', 'ƒLƒbƒ`ƒ“—p•i', 500, NULL, '2009-09-20');
-INSERT INTO Shohin VALUES ('0007', '‚¨‚ë‚µ‚ª‚Ë', 'ƒLƒbƒ`ƒ“—p•i', 880, 790, '2008-04-28');
-INSERT INTO Shohin VALUES ('0008', 'ƒ{[ƒ‹ƒyƒ“', 'Ž––±—p•i', 100, NULL, '2009-11-11');
+INSERT INTO Shohin VALUES ('0001', 'Tã‚·ãƒ£ãƒ„' ,'è¡£æœ', 1000, 500, '2009-09-20');
+INSERT INTO Shohin VALUES ('0002', 'ç©´ã‚ã‘ãƒ‘ãƒ³ãƒ', 'äº‹å‹™ç”¨å“', 500, 320, '2009-09-11');
+INSERT INTO Shohin VALUES ('0003', 'ã‚«ãƒƒã‚¿ãƒ¼ã‚·ãƒ£ãƒ„', 'è¡£æœ', 4000, 2800, NULL);
+INSERT INTO Shohin VALUES ('0004', 'åŒ…ä¸', 'ã‚­ãƒƒãƒãƒ³ç”¨å“', 3000, 2800, '2009-09-20');
+INSERT INTO Shohin VALUES ('0005', 'åœ§åŠ›é‹', 'ã‚­ãƒƒãƒãƒ³ç”¨å“', 6800, 5000, '2009-01-15');
+INSERT INTO Shohin VALUES ('0006', 'ãƒ•ã‚©ãƒ¼ã‚¯', 'ã‚­ãƒƒãƒãƒ³ç”¨å“', 500, NULL, '2009-09-20');
+INSERT INTO Shohin VALUES ('0007', 'ãŠã‚ã—ãŒã­', 'ã‚­ãƒƒãƒãƒ³ç”¨å“', 880, 790, '2008-04-28');
+INSERT INTO Shohin VALUES ('0008', 'ãƒœãƒ¼ãƒ«ãƒšãƒ³', 'äº‹å‹™ç”¨å“', 100, NULL, '2009-11-11');
 
 
 SELECT shohin_id, shohin_mei, hanbai_tanka,
@@ -92,7 +92,7 @@ WINDOW W AS (ORDER BY sample_date ASC
                  ROWS BETWEEN 1 FOLLOWING AND 1 FOLLOWING);
 
 
---‚±‚ê‚Å‚àŒ‹‰Ê‚ÍMIN‚Æ“¯‚¶
+--ã“ã‚Œã§ã‚‚çµæžœã¯MINã¨åŒã˜
 SELECT sample_date AS cur_date,
        load_val AS cur_load,
        MAX(sample_date) OVER W AS latest_date,
@@ -131,7 +131,7 @@ SELECT sample_date AS cur_date,
 
 
 
-‰‰K–â‘è
+æ¼”ç¿’å•é¡Œ
 
 
 SELECT server, sample_date,

@@ -1,65 +1,65 @@
-/* ŠO•”Œ‹‡‚Ås—ñ•ÏŠ·@‚»‚Ì1is¨—ñjFƒNƒƒX•\‚ðì‚é */
+/* å¤–éƒ¨çµåˆã§è¡Œåˆ—å¤‰æ›ã€€ãã®1ï¼ˆè¡Œâ†’åˆ—ï¼‰ï¼šã‚¯ãƒ­ã‚¹è¡¨ã‚’ä½œã‚‹ */
 CREATE TABLE Courses
 (name   VARCHAR(32), 
  course VARCHAR(32), 
  PRIMARY KEY(name, course));
 
-INSERT INTO Courses VALUES('Ôˆä', 'SQL“ü–å');
-INSERT INTO Courses VALUES('Ôˆä', 'UNIXŠî‘b');
-INSERT INTO Courses VALUES('—é–Ø', 'SQL“ü–å');
-INSERT INTO Courses VALUES('H“¡', 'SQL“ü–å');
-INSERT INTO Courses VALUES('H“¡', 'Java’†‹‰');
-INSERT INTO Courses VALUES('‹g“c', 'UNIXŠî‘b');
-INSERT INTO Courses VALUES('“n•Ó', 'SQL“ü–å');
+INSERT INTO Courses VALUES('èµ¤äº•', 'SQLå…¥é–€');
+INSERT INTO Courses VALUES('èµ¤äº•', 'UNIXåŸºç¤Ž');
+INSERT INTO Courses VALUES('éˆ´æœ¨', 'SQLå…¥é–€');
+INSERT INTO Courses VALUES('å·¥è—¤', 'SQLå…¥é–€');
+INSERT INTO Courses VALUES('å·¥è—¤', 'Javaä¸­ç´š');
+INSERT INTO Courses VALUES('å‰ç”°', 'UNIXåŸºç¤Ž');
+INSERT INTO Courses VALUES('æ¸¡è¾º', 'SQLå…¥é–€');
 
--- ƒNƒƒX•\‚ð‹‚ß‚é…•½“WŠJF‚»‚Ì1@ŠO•”Œ‹‡‚Ì—˜—p
+-- ã‚¯ãƒ­ã‚¹è¡¨ã‚’æ±‚ã‚ã‚‹æ°´å¹³å±•é–‹ï¼šãã®1ã€€å¤–éƒ¨çµåˆã®åˆ©ç”¨
 SELECT C0.name,
-       CASE WHEN C1.name IS NOT NULL THEN '›' ELSE NULL END AS "SQL“ü–å",
-       CASE WHEN C2.name IS NOT NULL THEN '›' ELSE NULL END AS "UNIXŠî‘b",
-       CASE WHEN C3.name IS NOT NULL THEN '›' ELSE NULL END AS "Java’†‹‰"
-  FROM (SELECT DISTINCT name FROM Courses) C0 --‚±‚ÌC0‚ª•\‘¤‚É‚È‚é
+       CASE WHEN C1.name IS NOT NULL THEN 'â—‹' ELSE NULL END AS "SQLå…¥é–€",
+       CASE WHEN C2.name IS NOT NULL THEN 'â—‹' ELSE NULL END AS "UNIXåŸºç¤Ž",
+       CASE WHEN C3.name IS NOT NULL THEN 'â—‹' ELSE NULL END AS "Javaä¸­ç´š"
+  FROM (SELECT DISTINCT name FROM Courses) C0 --ã“ã®C0ãŒè¡¨å´ã«ãªã‚‹
          LEFT OUTER JOIN
-          (SELECT name FROM Courses WHERE course = 'SQL“ü–å') C1
+          (SELECT name FROM Courses WHERE course = 'SQLå…¥é–€') C1
            ON C0.name = C1.name
              LEFT OUTER JOIN
-              (SELECT name FROM Courses WHERE course = 'UNIXŠî‘b') C2
+              (SELECT name FROM Courses WHERE course = 'UNIXåŸºç¤Ž') C2
                 ON C0.name = C2.name
                   LEFT OUTER JOIN
-                   (SELECT name FROM Courses WHERE course = 'Java’†‹‰') C3
+                   (SELECT name FROM Courses WHERE course = 'Javaä¸­ç´š') C3
                      ON C0.name = C3.name;
 
 
--- …•½“WŠJF‚»‚Ì2@ƒXƒJƒ‰ƒTƒuƒNƒGƒŠ‚Ì—˜—p
+-- æ°´å¹³å±•é–‹ï¼šãã®2ã€€ã‚¹ã‚«ãƒ©ã‚µãƒ–ã‚¯ã‚¨ãƒªã®åˆ©ç”¨
 SELECT C0.name,
-       (SELECT '›'
+       (SELECT 'â—‹'
           FROM Courses C1
-         WHERE course = 'SQL“ü–å'
-           AND C1.name = C0.name) AS "SQL“ü–å",
-       (SELECT '›'
+         WHERE course = 'SQLå…¥é–€'
+           AND C1.name = C0.name) AS "SQLå…¥é–€",
+       (SELECT 'â—‹'
           FROM Courses C2
-         WHERE course = 'UNIXŠî‘b'
-           AND C2.name = C0.name) AS "UNIXŠî‘b",
-       (SELECT '›'
+         WHERE course = 'UNIXåŸºç¤Ž'
+           AND C2.name = C0.name) AS "UNIXåŸºç¤Ž",
+       (SELECT 'â—‹'
           FROM Courses C3
-         WHERE course = 'Java’†‹‰'
-           AND C3.name = C0.name) AS "Java’†‹‰"
-  FROM (SELECT DISTINCT name FROM Courses) C0; --‚±‚ÌC0‚ª•\‘¤‚É‚È‚é
+         WHERE course = 'Javaä¸­ç´š'
+           AND C3.name = C0.name) AS "Javaä¸­ç´š"
+  FROM (SELECT DISTINCT name FROM Courses) C0; --ã“ã®C0ãŒè¡¨å´ã«ãªã‚‹
 
 
--- …•½“WŠJF‚»‚Ì3@CASEŽ®‚ð“ü‚êŽq‚É‚·‚é
+-- æ°´å¹³å±•é–‹ï¼šãã®3ã€€CASEå¼ã‚’å…¥ã‚Œå­ã«ã™ã‚‹
 SELECT name,
-       CASE WHEN SUM(CASE WHEN course = 'SQL“ü–å' THEN 1 ELSE NULL END) = 1
-            THEN '›' ELSE NULL END AS "SQL“ü–å",
-       CASE WHEN SUM(CASE WHEN course = 'UNIXŠî‘b' THEN 1 ELSE NULL END) = 1
-            THEN '›' ELSE NULL END AS "UNIXŠî‘b",
-       CASE WHEN SUM(CASE WHEN course = 'Java’†‹‰' THEN 1 ELSE NULL END) = 1
-            THEN '›' ELSE NULL END AS "Java’†‹‰"
+       CASE WHEN SUM(CASE WHEN course = 'SQLå…¥é–€' THEN 1 ELSE NULL END) = 1
+            THEN 'â—‹' ELSE NULL END AS "SQLå…¥é–€",
+       CASE WHEN SUM(CASE WHEN course = 'UNIXåŸºç¤Ž' THEN 1 ELSE NULL END) = 1
+            THEN 'â—‹' ELSE NULL END AS "UNIXåŸºç¤Ž",
+       CASE WHEN SUM(CASE WHEN course = 'Javaä¸­ç´š' THEN 1 ELSE NULL END) = 1
+            THEN 'â—‹' ELSE NULL END AS "Javaä¸­ç´š"
   FROM Courses
  GROUP BY name;
 
 
 
-/* ŠO•”Œ‹‡‚Ås—ñ•ÏŠ·@‚»‚Ì2i—ñ¨sjFŒJ‚è•Ô‚µ€–Ú‚ð1 —ñ‚É‚Ü‚Æ‚ß‚é */
+/* å¤–éƒ¨çµåˆã§è¡Œåˆ—å¤‰æ›ã€€ãã®2ï¼ˆåˆ—â†’è¡Œï¼‰ï¼šç¹°ã‚Šè¿”ã—é …ç›®ã‚’1 åˆ—ã«ã¾ã¨ã‚ã‚‹ */
 CREATE TABLE Personnel
  (employee   varchar(32), 
   child_1    varchar(32), 
@@ -67,12 +67,12 @@ CREATE TABLE Personnel
   child_3    varchar(32), 
   PRIMARY KEY(employee));
 
-INSERT INTO Personnel VALUES('Ôˆä', 'ˆê˜Y', '“ñ˜Y', 'ŽO˜Y');
-INSERT INTO Personnel VALUES('H“¡', 'tŽq', '‰ÄŽq', NULL);
-INSERT INTO Personnel VALUES('—é–Ø', '‰ÄŽq', NULL,   NULL);
-INSERT INTO Personnel VALUES('‹g“c', NULL,   NULL,   NULL);
+INSERT INTO Personnel VALUES('èµ¤äº•', 'ä¸€éƒŽ', 'äºŒéƒŽ', 'ä¸‰éƒŽ');
+INSERT INTO Personnel VALUES('å·¥è—¤', 'æ˜¥å­', 'å¤å­', NULL);
+INSERT INTO Personnel VALUES('éˆ´æœ¨', 'å¤å­', NULL,   NULL);
+INSERT INTO Personnel VALUES('å‰ç”°', NULL,   NULL,   NULL);
 
--- —ñ‚©‚çs‚Ö‚Ì•ÏŠ·FUNION ALL‚Ì—˜—p
+-- åˆ—ã‹ã‚‰è¡Œã¸ã®å¤‰æ›ï¼šUNION ALLã®åˆ©ç”¨
 SELECT employee, child_1 AS child FROM Personnel
 UNION ALL
 SELECT employee, child_2 AS child FROM Personnel
@@ -87,13 +87,13 @@ UNION
 SELECT child_3 FROM Personnel;
 
 
--- ŽÐˆõ‚ÌŽq‚Ç‚àƒŠƒXƒg‚ð“¾‚éSQLiŽq‚Ç‚à‚Ì‚¢‚È‚¢ŽÐˆõ‚ào—Í‚·‚éj
+-- ç¤¾å“¡ã®å­ã©ã‚‚ãƒªã‚¹ãƒˆã‚’å¾—ã‚‹SQLï¼ˆå­ã©ã‚‚ã®ã„ãªã„ç¤¾å“¡ã‚‚å‡ºåŠ›ã™ã‚‹ï¼‰
 SELECT EMP.employee, Children.child
   FROM Personnel EMP
          LEFT OUTER JOIN Children
            ON Children.child IN (EMP.child_1, EMP.child_2, EMP.child_3);
 
-/* ƒNƒƒX•\‚Å“ü‚êŽq‚Ì•\‘¤‚ðì‚é */
+/* ã‚¯ãƒ­ã‚¹è¡¨ã§å…¥ã‚Œå­ã®è¡¨å´ã‚’ä½œã‚‹ */
 CREATE TABLE TblSex
 (sex_cd   char(1), 
  sex varchar(5), 
@@ -111,54 +111,54 @@ CREATE TABLE TblPop
  population integer, 
  PRIMARY KEY(pref_name, age_class,sex_cd));
 
-INSERT INTO TblSex (sex_cd, sex ) VALUES('m',	'’j');
-INSERT INTO TblSex (sex_cd, sex ) VALUES('f',	'—');
+INSERT INTO TblSex (sex_cd, sex ) VALUES('m',	'ç”·');
+INSERT INTO TblSex (sex_cd, sex ) VALUES('f',	'å¥³');
 
-INSERT INTO TblAge (age_class, age_range ) VALUES('1',	'21`30Î');
-INSERT INTO TblAge (age_class, age_range ) VALUES('2',	'31`40Î');
-INSERT INTO TblAge (age_class, age_range ) VALUES('3',	'41`50Î');
+INSERT INTO TblAge (age_class, age_range ) VALUES('1',	'21ã€œ30æ­³');
+INSERT INTO TblAge (age_class, age_range ) VALUES('2',	'31ã€œ40æ­³');
+INSERT INTO TblAge (age_class, age_range ) VALUES('3',	'41ã€œ50æ­³');
 
-INSERT INTO TblPop VALUES('H“c', '1', 'm', 400 );
-INSERT INTO TblPop VALUES('H“c', '3', 'm', 1000 );
-INSERT INTO TblPop VALUES('H“c', '1', 'f', 800 );
-INSERT INTO TblPop VALUES('H“c', '3', 'f', 1000 );
-INSERT INTO TblPop VALUES('ÂX', '1', 'm', 700 );
-INSERT INTO TblPop VALUES('ÂX', '1', 'f', 500 );
-INSERT INTO TblPop VALUES('ÂX', '3', 'f', 800 );
-INSERT INTO TblPop VALUES('“Œ‹ž', '1', 'm', 900 );
-INSERT INTO TblPop VALUES('“Œ‹ž', '1', 'f', 1500 );
-INSERT INTO TblPop VALUES('“Œ‹ž', '3', 'f', 1200 );
-INSERT INTO TblPop VALUES('ç—t', '1', 'm', 900 );
-INSERT INTO TblPop VALUES('ç—t', '1', 'f', 1000 );
-INSERT INTO TblPop VALUES('ç—t', '3', 'f', 900 );
+INSERT INTO TblPop VALUES('ç§‹ç”°', '1', 'm', 400 );
+INSERT INTO TblPop VALUES('ç§‹ç”°', '3', 'm', 1000 );
+INSERT INTO TblPop VALUES('ç§‹ç”°', '1', 'f', 800 );
+INSERT INTO TblPop VALUES('ç§‹ç”°', '3', 'f', 1000 );
+INSERT INTO TblPop VALUES('é’æ£®', '1', 'm', 700 );
+INSERT INTO TblPop VALUES('é’æ£®', '1', 'f', 500 );
+INSERT INTO TblPop VALUES('é’æ£®', '3', 'f', 800 );
+INSERT INTO TblPop VALUES('æ±äº¬', '1', 'm', 900 );
+INSERT INTO TblPop VALUES('æ±äº¬', '1', 'f', 1500 );
+INSERT INTO TblPop VALUES('æ±äº¬', '3', 'f', 1200 );
+INSERT INTO TblPop VALUES('åƒè‘‰', '1', 'm', 900 );
+INSERT INTO TblPop VALUES('åƒè‘‰', '1', 'f', 1000 );
+INSERT INTO TblPop VALUES('åƒè‘‰', '3', 'f', 900 );
 
--- ŠO•”Œ‹‡‚Å“ü‚êŽq‚Ì•\‘¤‚ðì‚éFŠÔˆá‚Á‚½SQL
+-- å¤–éƒ¨çµåˆã§å…¥ã‚Œå­ã®è¡¨å´ã‚’ä½œã‚‹ï¼šé–“é•ã£ãŸSQL
 SELECT MASTER1.age_class AS age_class,
        MASTER2.sex_cd AS sex_cd,
        DATA.pop_tohoku AS pop_tohoku,
        DATA.pop_kanto AS pop_kanto
   FROM (SELECT age_class, sex_cd,
-               SUM(CASE WHEN pref_name IN ('ÂX', 'H“c')
+               SUM(CASE WHEN pref_name IN ('é’æ£®', 'ç§‹ç”°')
                         THEN population ELSE NULL END) AS pop_tohoku,
-               SUM(CASE WHEN pref_name IN ('“Œ‹ž', 'ç—t')
+               SUM(CASE WHEN pref_name IN ('æ±äº¬', 'åƒè‘‰')
                         THEN population ELSE NULL END) AS pop_kanto
           FROM TblPop
          GROUP BY age_class, sex_cd) DATA
-           RIGHT OUTER JOIN TblAge MASTER1 --ŠO•”Œ‹‡1F”N—îŠK‹‰ƒ}ƒXƒ^‚ÆŒ‹‡
+           RIGHT OUTER JOIN TblAge MASTER1 --å¤–éƒ¨çµåˆ1ï¼šå¹´é½¢éšŽç´šãƒžã‚¹ã‚¿ã¨çµåˆ
               ON MASTER1.age_class = DATA.age_class
-           RIGHT OUTER JOIN TblSex MASTER2 --ŠO•”Œ‹‡2F«•Êƒ}ƒXƒ^‚ÆŒ‹‡
+           RIGHT OUTER JOIN TblSex MASTER2 --å¤–éƒ¨çµåˆ2ï¼šæ€§åˆ¥ãƒžã‚¹ã‚¿ã¨çµåˆ
               ON MASTER2.sex_cd = DATA.sex_cd;
 
 
--- Å‰‚ÌŠO•”Œ‹‡‚ÅŽ~‚ß‚½ê‡F”N—îŠK‹‰u2v‚àŒ‹‰Ê‚ÉŒ»‚í‚ê‚é
+-- æœ€åˆã®å¤–éƒ¨çµåˆã§æ­¢ã‚ãŸå ´åˆï¼šå¹´é½¢éšŽç´šã€Œ2ã€ã‚‚çµæžœã«ç¾ã‚ã‚Œã‚‹
 SELECT MASTER1.age_class AS age_class,
        DATA.sex_cd AS sex_cd,
        DATA.pop_tohoku AS pop_tohoku,
        DATA.pop_kanto AS pop_kanto
   FROM (SELECT age_class, sex_cd,
-               SUM(CASE WHEN pref_name IN ('ÂX', 'H“c')
+               SUM(CASE WHEN pref_name IN ('é’æ£®', 'ç§‹ç”°')
                         THEN population ELSE NULL END) AS pop_tohoku,
-               SUM(CASE WHEN pref_name IN ('“Œ‹ž', 'ç—t')
+               SUM(CASE WHEN pref_name IN ('æ±äº¬', 'åƒè‘‰')
                         THEN population ELSE NULL END) AS pop_kanto
           FROM TblPop
          GROUP BY age_class, sex_cd) DATA
@@ -166,18 +166,18 @@ SELECT MASTER1.age_class AS age_class,
              ON MASTER1.age_class = DATA.age_class;
 
 
--- ŠO•”Œ‹‡‚Å“ü‚êŽq‚Ì•\‘¤‚ðì‚éF³‚µ‚¢SQL
+-- å¤–éƒ¨çµåˆã§å…¥ã‚Œå­ã®è¡¨å´ã‚’ä½œã‚‹ï¼šæ­£ã—ã„SQL
 SELECT MASTER.age_class AS age_class,
        MASTER.sex_cd AS sex_cd,
        DATA.pop_tohoku AS pop_tohoku,
        DATA.pop_kanto AS pop_kanto
   FROM (SELECT age_class, sex_cd
-          FROM TblAge CROSS JOIN TblSex ) MASTER --ƒNƒƒXŒ‹‡‚Åƒ}ƒXƒ^“¯Žm‚Ì’¼Ï‚ðì‚é
+          FROM TblAge CROSS JOIN TblSex ) MASTER --ã‚¯ãƒ­ã‚¹çµåˆã§ãƒžã‚¹ã‚¿åŒå£«ã®ç›´ç©ã‚’ä½œã‚‹
             LEFT OUTER JOIN
              (SELECT age_class, sex_cd,
-                     SUM(CASE WHEN pref_name IN ('ÂX', 'H“c')
+                     SUM(CASE WHEN pref_name IN ('é’æ£®', 'ç§‹ç”°')
                               THEN population ELSE NULL END) AS pop_tohoku,
-                     SUM(CASE WHEN pref_name IN ('“Œ‹ž', 'ç—t')
+                     SUM(CASE WHEN pref_name IN ('æ±äº¬', 'åƒè‘‰')
                               THEN population ELSE NULL END) AS pop_kanto
                 FROM TblPop
                GROUP BY age_class, sex_cd) DATA
@@ -185,7 +185,7 @@ SELECT MASTER.age_class AS age_class,
    AND MASTER.sex_cd = DATA.sex_cd;
 
 
-/* Š|‚¯ŽZ‚Æ‚µ‚Ä‚ÌŒ‹‡ */
+/* æŽ›ã‘ç®—ã¨ã—ã¦ã®çµåˆ */
 CREATE TABLE Items
  (item_no INTEGER PRIMARY KEY,
   item    VARCHAR(32) NOT NULL);
@@ -209,7 +209,7 @@ INSERT INTO SalesHistory VALUES('2018-10-03',  30, 12);
 INSERT INTO SalesHistory VALUES('2018-10-04',  20, 22);
 INSERT INTO SalesHistory VALUES('2018-10-04',  30,  7);
 
--- “š‚¦F‚»‚Ì1@Œ‹‡‚Ì‘O‚ÉW–ñ‚·‚é‚±‚Æ‚ÅA1‘Î1‚ÌŠÖŒW‚ðì‚é
+-- ç­”ãˆï¼šãã®1ã€€çµåˆã®å‰ã«é›†ç´„ã™ã‚‹ã“ã¨ã§ã€1å¯¾1ã®é–¢ä¿‚ã‚’ä½œã‚‹
 SELECT I.item_no, SH.total_qty
   FROM Items I LEFT OUTER JOIN
                 (SELECT item_no, SUM(quantity) AS total_qty
@@ -217,14 +217,14 @@ SELECT I.item_no, SH.total_qty
                   GROUP BY item_no) SH
     ON I.item_no = SH.item_no;
 
--- “š‚¦F‚»‚Ì2@W–ñ‚Ì‘O‚É1‘Î‘½‚ÌŒ‹‡‚ðs‚È‚¤
+-- ç­”ãˆï¼šãã®2ã€€é›†ç´„ã®å‰ã«1å¯¾å¤šã®çµåˆã‚’è¡Œãªã†
 SELECT I.item_no, SUM(SH.quantity) AS total_qty
   FROM Items I LEFT OUTER JOIN SalesHistory SH
-    ON I.item_no = SH.item_no --1‘Î‘½‚ÌŒ‹‡
+    ON I.item_no = SH.item_no --1å¯¾å¤šã®çµåˆ
  GROUP BY I.item_no;
 
 
-/* Š®‘SŠO•”Œ‹‡ */
+/* å®Œå…¨å¤–éƒ¨çµåˆ */
 CREATE TABLE Class_A
 (id char(1), 
  name varchar(30), 
@@ -235,16 +235,16 @@ CREATE TABLE Class_B
  name varchar(30), 
  PRIMARY KEY(id));
 
-INSERT INTO Class_A (id, name) VALUES('1', '“c’†');
-INSERT INTO Class_A (id, name) VALUES('2', '—é–Ø');
-INSERT INTO Class_A (id, name) VALUES('3', 'ˆÉW‰@');
+INSERT INTO Class_A (id, name) VALUES('1', 'ç”°ä¸­');
+INSERT INTO Class_A (id, name) VALUES('2', 'éˆ´æœ¨');
+INSERT INTO Class_A (id, name) VALUES('3', 'ä¼Šé›†é™¢');
 
-INSERT INTO Class_B (id, name) VALUES('1', '“c’†');
-INSERT INTO Class_B (id, name) VALUES('2', '—é–Ø');
-INSERT INTO Class_B (id, name) VALUES('4', '¼‰€Ž›');
+INSERT INTO Class_B (id, name) VALUES('1', 'ç”°ä¸­');
+INSERT INTO Class_B (id, name) VALUES('2', 'éˆ´æœ¨');
+INSERT INTO Class_B (id, name) VALUES('4', 'è¥¿åœ’å¯º');
 
 
--- Š®‘SŠO•”Œ‹‡‚Íî•ñ‚ðuŠ®‘Sv‚É•Û‘¶‚·‚é
+-- å®Œå…¨å¤–éƒ¨çµåˆã¯æƒ…å ±ã‚’ã€Œå®Œå…¨ã€ã«ä¿å­˜ã™ã‚‹
 SELECT COALESCE(A.id, B.id) AS id,
        A.name AS A_name,
        B.name AS B_name
@@ -252,7 +252,7 @@ SELECT COALESCE(A.id, B.id) AS id,
     ON A.id = B.id;
 
 
--- Š®‘SŠO•”Œ‹‡‚ªŽg‚¦‚È‚¢ŠÂ‹«‚Å‚Ì‘ã‘Ö•û–@
+-- å®Œå…¨å¤–éƒ¨çµåˆãŒä½¿ãˆãªã„ç’°å¢ƒã§ã®ä»£æ›¿æ–¹æ³•
 SELECT A.id AS id, A.name, B.name
   FROM Class_A A LEFT OUTER JOIN Class_B B
     ON A.id = B.id
@@ -279,7 +279,7 @@ SELECT COALESCE(A.id, B.id) AS id,
  WHERE A.name IS NULL
     OR B.name IS NULL;
 
--- ŠO•”Œ‹‡‚ÅŠÖŒWœŽZF·W‡‚Ì‰ž—p
+-- å¤–éƒ¨çµåˆã§é–¢ä¿‚é™¤ç®—ï¼šå·®é›†åˆã®å¿œç”¨
 SELECT DISTINCT shop
   FROM ShopItems SI1
  WHERE NOT EXISTS

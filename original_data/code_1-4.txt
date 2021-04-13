@@ -3,10 +3,10 @@ CREATE TABLE Students
 (name CHAR(16) PRIMARY KEY,
  age  INTEGER  );
 
-INSERT INTO Students VALUES('�u���E��',  22);
-INSERT INTO Students VALUES('�����[',    19);
-INSERT INTO Students VALUES('�W����',    NULL);
-INSERT INTO Students VALUES('�{�M�[',    21);
+INSERT INTO Students VALUES('ブラウン',  22);
+INSERT INTO Students VALUES('ラリー',    19);
+INSERT INTO Students VALUES('ジョン',    NULL);
+INSERT INTO Students VALUES('ボギー',    21);
 
 
 SELECT *
@@ -14,10 +14,10 @@ SELECT *
  WHERE age IS DISTINCT FROM 20;
 
 
--- �󕶎��Ƃ̘A���iOracle�j
+-- 空文字との連結（Oracle）
 SELECT 'abc' || '' AS string FROM dual;
 
--- NULL�Ƃ̘A���iOracle�j
+-- NULLとの連結（Oracle）
 SELECT 'abc' || NULL AS string FROM dual;
 
 CREATE TABLE EmptyStr

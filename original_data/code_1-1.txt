@@ -1,45 +1,45 @@
-/* Šù‘¶‚ÌƒR[ƒh‘ÌŒn‚ðV‚µ‚¢‘ÌŒn‚É•ÏŠ·‚µ‚ÄWŒv */
+/* æ—¢å­˜ã®ã‚³ãƒ¼ãƒ‰ä½“ç³»ã‚’æ–°ã—ã„ä½“ç³»ã«å¤‰æ›ã—ã¦é›†è¨ˆ */
 CREATE TABLE PopTbl
 (pref_name VARCHAR(32) PRIMARY KEY,
  population INTEGER NOT NULL);
 
-INSERT INTO PopTbl VALUES('“¿“‡', 100);
-INSERT INTO PopTbl VALUES('ì', 200);
-INSERT INTO PopTbl VALUES('ˆ¤•Q', 150);
-INSERT INTO PopTbl VALUES('‚’m', 200);
-INSERT INTO PopTbl VALUES('•Ÿ‰ª', 300);
-INSERT INTO PopTbl VALUES('²‰ê', 100);
-INSERT INTO PopTbl VALUES('’·è', 200);
-INSERT INTO PopTbl VALUES('“Œ‹ž', 400);
-INSERT INTO PopTbl VALUES('ŒQ”n', 50);
+INSERT INTO PopTbl VALUES('å¾³å³¶', 100);
+INSERT INTO PopTbl VALUES('é¦™å·', 200);
+INSERT INTO PopTbl VALUES('æ„›åª›', 150);
+INSERT INTO PopTbl VALUES('é«˜çŸ¥', 200);
+INSERT INTO PopTbl VALUES('ç¦å²¡', 300);
+INSERT INTO PopTbl VALUES('ä½è³€', 100);
+INSERT INTO PopTbl VALUES('é•·å´Ž', 200);
+INSERT INTO PopTbl VALUES('æ±äº¬', 400);
+INSERT INTO PopTbl VALUES('ç¾¤é¦¬', 50);
 
 
-/* ˆÙ‚È‚éðŒ‚ÌWŒv‚ð1‚Â‚ÌSQL‚Ås‚¤ */
+/* ç•°ãªã‚‹æ¡ä»¶ã®é›†è¨ˆã‚’1ã¤ã®SQLã§è¡Œã† */
 CREATE TABLE PopTbl2
 (pref_name VARCHAR(32),
  sex CHAR(1) NOT NULL,
  population INTEGER NOT NULL,
     PRIMARY KEY(pref_name, sex));
 
-INSERT INTO PopTbl2 VALUES('“¿“‡', '1',	60 );
-INSERT INTO PopTbl2 VALUES('“¿“‡', '2',	40 );
-INSERT INTO PopTbl2 VALUES('ì', '1',	100);
-INSERT INTO PopTbl2 VALUES('ì', '2',	100);
-INSERT INTO PopTbl2 VALUES('ˆ¤•Q', '1',	100);
-INSERT INTO PopTbl2 VALUES('ˆ¤•Q', '2',	50 );
-INSERT INTO PopTbl2 VALUES('‚’m', '1',	100);
-INSERT INTO PopTbl2 VALUES('‚’m', '2',	100);
-INSERT INTO PopTbl2 VALUES('•Ÿ‰ª', '1',	100);
-INSERT INTO PopTbl2 VALUES('•Ÿ‰ª', '2',	200);
-INSERT INTO PopTbl2 VALUES('²‰ê', '1',	20 );
-INSERT INTO PopTbl2 VALUES('²‰ê', '2',	80 );
-INSERT INTO PopTbl2 VALUES('’·è', '1',	125);
-INSERT INTO PopTbl2 VALUES('’·è', '2',	125);
-INSERT INTO PopTbl2 VALUES('“Œ‹ž', '1',	250);
-INSERT INTO PopTbl2 VALUES('“Œ‹ž', '2',	150);
+INSERT INTO PopTbl2 VALUES('å¾³å³¶', '1',	60 );
+INSERT INTO PopTbl2 VALUES('å¾³å³¶', '2',	40 );
+INSERT INTO PopTbl2 VALUES('é¦™å·', '1',	100);
+INSERT INTO PopTbl2 VALUES('é¦™å·', '2',	100);
+INSERT INTO PopTbl2 VALUES('æ„›åª›', '1',	100);
+INSERT INTO PopTbl2 VALUES('æ„›åª›', '2',	50 );
+INSERT INTO PopTbl2 VALUES('é«˜çŸ¥', '1',	100);
+INSERT INTO PopTbl2 VALUES('é«˜çŸ¥', '2',	100);
+INSERT INTO PopTbl2 VALUES('ç¦å²¡', '1',	100);
+INSERT INTO PopTbl2 VALUES('ç¦å²¡', '2',	200);
+INSERT INTO PopTbl2 VALUES('ä½è³€', '1',	20 );
+INSERT INTO PopTbl2 VALUES('ä½è³€', '2',	80 );
+INSERT INTO PopTbl2 VALUES('é•·å´Ž', '1',	125);
+INSERT INTO PopTbl2 VALUES('é•·å´Ž', '2',	125);
+INSERT INTO PopTbl2 VALUES('æ±äº¬', '1',	250);
+INSERT INTO PopTbl2 VALUES('æ±äº¬', '2',	150);
 
 
-/* CHECK§–ñ‚Å•¡”‚Ì—ñ‚ÌðŒŠÖŒW‚ð’è‹`‚·‚é */
+/* CHECKåˆ¶ç´„ã§è¤‡æ•°ã®åˆ—ã®æ¡ä»¶é–¢ä¿‚ã‚’å®šç¾©ã™ã‚‹ */
 CREATE TABLE TestSal
 (sex CHAR(1) ,
  salary INTEGER,
@@ -58,26 +58,26 @@ INSERT INTO TestSal VALUES(2, NULL);
 INSERT INTO TestSal VALUES(1, 300000);
 
 
-/* ðŒ‚ð•ªŠò‚³‚¹‚½UPDATE */
+/* æ¡ä»¶ã‚’åˆ†å²ã•ã›ãŸUPDATE */
 CREATE TABLE SomeTable
 (p_key CHAR(1) PRIMARY KEY,
  col_1 INTEGER NOT NULL, 
  col_2 CHAR(2) NOT NULL);
 
-INSERT INTO SomeTable VALUES('a', 1, '‚ ');
-INSERT INTO SomeTable VALUES('b', 2, '‚¢');
-INSERT INTO SomeTable VALUES('c', 3, '‚¤');
+INSERT INTO SomeTable VALUES('a', 1, 'ã‚');
+INSERT INTO SomeTable VALUES('b', 2, 'ã„');
+INSERT INTO SomeTable VALUES('c', 3, 'ã†');
 
 
-/* ƒe[ƒuƒ‹“¯Žm‚Ìƒ}ƒbƒ`ƒ“ƒO */
+/* ãƒ†ãƒ¼ãƒ–ãƒ«åŒå£«ã®ãƒžãƒƒãƒãƒ³ã‚° */
 CREATE TABLE CourseMaster
 (course_id   INTEGER PRIMARY KEY,
  course_name VARCHAR(32) NOT NULL);
 
-INSERT INTO CourseMaster VALUES(1, 'Œo—“ü–å');
-INSERT INTO CourseMaster VALUES(2, 'à–±’mŽ¯');
-INSERT INTO CourseMaster VALUES(3, '•ë‹LŒŸ’è');
-INSERT INTO CourseMaster VALUES(4, 'Å—Žm');
+INSERT INTO CourseMaster VALUES(1, 'çµŒç†å…¥é–€');
+INSERT INTO CourseMaster VALUES(2, 'è²¡å‹™çŸ¥è­˜');
+INSERT INTO CourseMaster VALUES(3, 'ç°¿è¨˜æ¤œå®š');
+INSERT INTO CourseMaster VALUES(4, 'ç¨Žç†å£«');
 
 CREATE TABLE OpenCourses
 (month       INTEGER ,
@@ -92,7 +92,7 @@ INSERT INTO OpenCourses VALUES(200708, 2);
 INSERT INTO OpenCourses VALUES(200708, 4);
 
 
-/* CASEŽ®‚Ì’†‚ÅW–ñŠÖ”‚ðŽg‚¤ */
+/* CASEå¼ã®ä¸­ã§é›†ç´„é–¢æ•°ã‚’ä½¿ã† */
 CREATE TABLE StudentClub
 (std_id  INTEGER,
  club_id INTEGER,
@@ -100,42 +100,42 @@ CREATE TABLE StudentClub
  main_club_flg CHAR(1),
  PRIMARY KEY (std_id, club_id));
 
-INSERT INTO StudentClub VALUES(100, 1, '–ì‹…',        'Y');
-INSERT INTO StudentClub VALUES(100, 2, '‘tŠy',      'N');
-INSERT INTO StudentClub VALUES(200, 2, '‘tŠy',      'N');
-INSERT INTO StudentClub VALUES(200, 3, 'ƒoƒhƒ~ƒ“ƒgƒ“','Y');
-INSERT INTO StudentClub VALUES(200, 4, 'ƒTƒbƒJ[',    'N');
-INSERT INTO StudentClub VALUES(300, 4, 'ƒTƒbƒJ[',    'N');
-INSERT INTO StudentClub VALUES(400, 5, '…‰j',        'N');
-INSERT INTO StudentClub VALUES(500, 6, 'ˆÍŒé',        'N');
+INSERT INTO StudentClub VALUES(100, 1, 'é‡Žçƒ',        'Y');
+INSERT INTO StudentClub VALUES(100, 2, 'å¹å¥æ¥½',      'N');
+INSERT INTO StudentClub VALUES(200, 2, 'å¹å¥æ¥½',      'N');
+INSERT INTO StudentClub VALUES(200, 3, 'ãƒãƒ‰ãƒŸãƒ³ãƒˆãƒ³','Y');
+INSERT INTO StudentClub VALUES(200, 4, 'ã‚µãƒƒã‚«ãƒ¼',    'N');
+INSERT INTO StudentClub VALUES(300, 4, 'ã‚µãƒƒã‚«ãƒ¼',    'N');
+INSERT INTO StudentClub VALUES(400, 5, 'æ°´æ³³',        'N');
+INSERT INTO StudentClub VALUES(500, 6, 'å›²ç¢',        'N');
 
 
 
 
 
 SELECT CASE pref_name
-          WHEN '“¿“‡' THEN 'Žl‘'
-          WHEN 'ì' THEN 'Žl‘'
-          WHEN 'ˆ¤•Q' THEN 'Žl‘'
-          WHEN '‚’m' THEN 'Žl‘'
-          WHEN '•Ÿ‰ª' THEN '‹ãB'
-          WHEN '²‰ê' THEN '‹ãB'
-          WHEN '’·è' THEN '‹ãB'
-          ELSE '‚»‚Ì‘¼' END AS district,
+          WHEN 'å¾³å³¶' THEN 'å››å›½'
+          WHEN 'é¦™å·' THEN 'å››å›½'
+          WHEN 'æ„›åª›' THEN 'å››å›½'
+          WHEN 'é«˜çŸ¥' THEN 'å››å›½'
+          WHEN 'ç¦å²¡' THEN 'ä¹å·ž'
+          WHEN 'ä½è³€' THEN 'ä¹å·ž'
+          WHEN 'é•·å´Ž' THEN 'ä¹å·ž'
+          ELSE 'ãã®ä»–' END AS district,
        SUM(population)
   FROM PopTbl
  GROUP BY CASE pref_name
-             WHEN '“¿“‡' THEN 'Žl‘'
-             WHEN 'ì' THEN 'Žl‘'
-             WHEN 'ˆ¤•Q' THEN 'Žl‘'
-             WHEN '‚’m' THEN 'Žl‘'
-             WHEN '•Ÿ‰ª' THEN '‹ãB'
-             WHEN '²‰ê' THEN '‹ãB'
-             WHEN '’·è' THEN '‹ãB'
-             ELSE '‚»‚Ì‘¼' END;
+             WHEN 'å¾³å³¶' THEN 'å››å›½'
+             WHEN 'é¦™å·' THEN 'å››å›½'
+             WHEN 'æ„›åª›' THEN 'å››å›½'
+             WHEN 'é«˜çŸ¥' THEN 'å››å›½'
+             WHEN 'ç¦å²¡' THEN 'ä¹å·ž'
+             WHEN 'ä½è³€' THEN 'ä¹å·ž'
+             WHEN 'é•·å´Ž' THEN 'ä¹å·ž'
+             ELSE 'ãã®ä»–' END;
 
 
---lŒûŠK‹‰‚²‚Æ‚É“s“¹•{Œ§‚ð•ª—Þ‚·‚é
+--äººå£éšŽç´šã”ã¨ã«éƒ½é“åºœçœŒã‚’åˆ†é¡žã™ã‚‹
 SELECT CASE WHEN population < 100 THEN '01'
             WHEN population >= 100 AND population < 200 THEN '02'
             WHEN population >= 200 AND population < 300 THEN '03'
@@ -151,16 +151,16 @@ SELECT CASE WHEN population < 100 THEN '01'
 
 
 
---’n•û’PˆÊ‚ÉƒR[ƒh‚ðÄ•ª—Þ‚·‚é ‚»‚Ì2FCASEŽ®‚ðˆê‰ÓŠ‚É‚Ü‚Æ‚ß‚é
+--åœ°æ–¹å˜ä½ã«ã‚³ãƒ¼ãƒ‰ã‚’å†åˆ†é¡žã™ã‚‹ ãã®2ï¼šCASEå¼ã‚’ä¸€ç®‡æ‰€ã«ã¾ã¨ã‚ã‚‹
 SELECT CASE pref_name
-          WHEN '“¿“‡' THEN 'Žl‘'
-          WHEN 'ì' THEN 'Žl‘'
-          WHEN 'ˆ¤•Q' THEN 'Žl‘'
-          WHEN '‚’m' THEN 'Žl‘'
-          WHEN '•Ÿ‰ª' THEN '‹ãB'
-          WHEN '²‰ê' THEN '‹ãB'
-          WHEN '’·è' THEN '‹ãB'
-          ELSE '‚»‚Ì‘¼' END AS district,
+          WHEN 'å¾³å³¶' THEN 'å››å›½'
+          WHEN 'é¦™å·' THEN 'å››å›½'
+          WHEN 'æ„›åª›' THEN 'å››å›½'
+          WHEN 'é«˜çŸ¥' THEN 'å››å›½'
+          WHEN 'ç¦å²¡' THEN 'ä¹å·ž'
+          WHEN 'ä½è³€' THEN 'ä¹å·ž'
+          WHEN 'é•·å´Ž' THEN 'ä¹å·ž'
+          ELSE 'ãã®ä»–' END AS district,
        SUM(population)
   FROM PopTbl
  GROUP BY district;
@@ -179,18 +179,18 @@ SELECT pref_name,
 
 
 SELECT pref_name,
-       --’j«‚ÌlŒû
+       --ç”·æ€§ã®äººå£
        SUM( CASE WHEN sex = '1' THEN population ELSE 0 END) AS cnt_m,
-       --—«‚ÌlŒû
+       --å¥³æ€§ã®äººå£
        SUM( CASE WHEN sex = '2' THEN population ELSE 0 END) AS cnt_f
   FROM PopTbl2
  GROUP BY pref_name;
 
 
 SELECT pref_name,
-       --’j«‚ÌlŒû
+       --ç”·æ€§ã®äººå£
        CASE WHEN sex = '1' THEN population ELSE 0 END AS cnt_m,
-       --—«‚ÌlŒû
+       --å¥³æ€§ã®äººå£
        CASE WHEN sex = '2' THEN population ELSE 0 END AS cnt_f
   FROM PopTbl2;
 
@@ -207,13 +207,13 @@ CONSTRAINT check_salary CHECK
 
 
 
---ðŒ1
+--æ¡ä»¶1
 UPDATE Personnel
    SET salary = salary * 0.9
  WHERE salary >= 300000;
 
 
---ðŒ2
+--æ¡ä»¶2
 UPDATE Personnel
    SET salary = salary * 1.2
  WHERE salary >= 250000 AND salary < 280000;
@@ -228,23 +228,23 @@ UPDATE Personnel
                 ELSE salary END;
 
 
---1Da‚ðƒ[ƒN—p‚Ì’ld‚Ö‘Þ”ð
+--1ï¼Žaã‚’ãƒ¯ãƒ¼ã‚¯ç”¨ã®å€¤dã¸é€€é¿
 UPDATE SomeTable
    SET p_key = 'd'
  WHERE p_key = 'a';
 
---2Db‚ða‚Ö•ÏŠ·
+--2ï¼Žbã‚’aã¸å¤‰æ›
 UPDATE SomeTable
    SET p_key = 'a'
  WHERE p_key = 'b';
 
---3Dd‚ðb‚Ö•ÏŠ·
+--3ï¼Ždã‚’bã¸å¤‰æ›
 UPDATE SomeTable
    SET p_key = 'b'
  WHERE p_key = 'd';
 
 
---CASEŽ®‚ÅŽåƒL[‚ð“ü‚ê‘Ö‚¦‚é
+--CASEå¼ã§ä¸»ã‚­ãƒ¼ã‚’å…¥ã‚Œæ›¿ãˆã‚‹
 UPDATE SomeTable
    SET p_key = CASE WHEN p_key = 'a'
                     THEN 'b'
@@ -255,59 +255,59 @@ UPDATE SomeTable
 
 
 
---ƒe[ƒuƒ‹‚Ìƒ}ƒbƒ`ƒ“ƒOFINqŒê‚Ì—˜—p
+--ãƒ†ãƒ¼ãƒ–ãƒ«ã®ãƒžãƒƒãƒãƒ³ã‚°ï¼šINè¿°èªžã®åˆ©ç”¨
 SELECT course_name,
        CASE WHEN course_id IN
                     (SELECT course_id FROM OpenCourses
-                      WHERE month = 201806) THEN '›'
-            ELSE '~' END AS "6 ŒŽ",
+                      WHERE month = 201806) THEN 'â—‹'
+            ELSE 'Ã—' END AS "6 æœˆ",
        CASE WHEN course_id IN
                     (SELECT course_id FROM OpenCourses
-                      WHERE month = 201807) THEN '›'
-            ELSE '~' END AS "7 ŒŽ",
+                      WHERE month = 201807) THEN 'â—‹'
+            ELSE 'Ã—' END AS "7 æœˆ",
        CASE WHEN course_id IN
                     (SELECT course_id FROM OpenCourses
-                      WHERE month = 201808) THEN '›'
-            ELSE '~' END AS "8 ŒŽ"
+                      WHERE month = 201808) THEN 'â—‹'
+            ELSE 'Ã—' END AS "8 æœˆ"
   FROM CourseMaster;
 
 
---ƒe[ƒuƒ‹‚Ìƒ}ƒbƒ`ƒ“ƒOFEXISTSqŒê‚Ì—˜—p
+--ãƒ†ãƒ¼ãƒ–ãƒ«ã®ãƒžãƒƒãƒãƒ³ã‚°ï¼šEXISTSè¿°èªžã®åˆ©ç”¨
 SELECT CM.course_name,
        CASE WHEN EXISTS
                   (SELECT course_id FROM OpenCourses OC
                     WHERE month = 201806
-                      AND OC.course_id = CM.course_id) THEN '›'
-            ELSE '~' END AS "6 ŒŽ",
+                      AND OC.course_id = CM.course_id) THEN 'â—‹'
+            ELSE 'Ã—' END AS "6 æœˆ",
        CASE WHEN EXISTS
                   (SELECT course_id FROM OpenCourses OC
                     WHERE month = 201807
-                      AND OC.course_id = CM.course_id) THEN '›'
-            ELSE '~' END AS "7 ŒŽ",
+                      AND OC.course_id = CM.course_id) THEN 'â—‹'
+            ELSE 'Ã—' END AS "7 æœˆ",
        CASE WHEN EXISTS
                   (SELECT course_id FROM OpenCourses OC
                     WHERE month = 201808
-                      AND OC.course_id = CM.course_id) THEN '›'
-            ELSE '~' END AS "8 ŒŽ"
+                      AND OC.course_id = CM.course_id) THEN 'â—‹'
+            ELSE 'Ã—' END AS "8 æœˆ"
   FROM CourseMaster CM;
 
 
 
---ðŒ1F1‚Â‚ÌƒNƒ‰ƒu‚Éê”O‚µ‚Ä‚¢‚éŠw¶‚ð‘I‘ð
+--æ¡ä»¶1ï¼š1ã¤ã®ã‚¯ãƒ©ãƒ–ã«å°‚å¿µã—ã¦ã„ã‚‹å­¦ç”Ÿã‚’é¸æŠž
 SELECT std_id, MAX(club_id) AS main_club
   FROM StudentClub
  GROUP BY std_id
 HAVING COUNT(*) = 1;
 
 
---ðŒ2FƒNƒ‰ƒu‚ð‚©‚¯Ž‚¿‚µ‚Ä‚¢‚éŠw¶‚ð‘I‘ð
+--æ¡ä»¶2ï¼šã‚¯ãƒ©ãƒ–ã‚’ã‹ã‘æŒã¡ã—ã¦ã„ã‚‹å­¦ç”Ÿã‚’é¸æŠž
 SELECT std_id, club_id AS main_club
   FROM StudentClub
  WHERE main_club_flg = 'Y';
 
 
 SELECT std_id,
-       CASE WHEN COUNT(*) = 1 --1‚Â‚ÌƒNƒ‰ƒu‚Éê”O‚·‚éŠw¶‚Ìê‡
+       CASE WHEN COUNT(*) = 1 --1ã¤ã®ã‚¯ãƒ©ãƒ–ã«å°‚å¿µã™ã‚‹å­¦ç”Ÿã®å ´åˆ
             THEN MAX(club_id)
             ELSE MAX(CASE WHEN main_club_flg = 'Y'
                           THEN club_id

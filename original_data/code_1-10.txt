@@ -1,4 +1,4 @@
--- ˜A”Ô‚ğì‚ë‚¤
+-- é€£ç•ªã‚’ä½œã‚ã†
 CREATE TABLE Digits
  (digit INTEGER PRIMARY KEY); 
 
@@ -13,20 +13,20 @@ INSERT INTO Digits VALUES (7);
 INSERT INTO Digits VALUES (8);
 INSERT INTO Digits VALUES (9);
 
--- ˜A”Ô‚ğ‹‚ß‚éF‚»‚Ì1@0`99
+-- é€£ç•ªã‚’æ±‚ã‚ã‚‹ï¼šãã®1ã€€0ã€œ99
 SELECT D1.digit + (D2.digit * 10) AS seq
   FROM Digits D1 CROSS JOIN Digits D2
  ORDER BY seq;
 
 
--- ˜A”Ô‚ğ‹‚ß‚éF‚»‚Ì2@1`542‚ğ‹‚ß‚é
+-- é€£ç•ªã‚’æ±‚ã‚ã‚‹ï¼šãã®2ã€€1ã€œ542ã‚’æ±‚ã‚ã‚‹
 SELECT D1.digit + (D2.digit * 10) + (D3.digit * 100) AS seq
   FROM Digits D1 CROSS JOIN Digits D2
          CROSS JOIN Digits D3
  WHERE D1.digit + (D2.digit * 10) + (D3.digit * 100)
          BETWEEN 1 AND 542 ORDER BY seq;
 
---Œ‡”Ô‚ğ‘S•”‹‚ß‚é
+--æ¬ ç•ªã‚’å…¨éƒ¨æ±‚ã‚ã‚‹
 CREATE TABLE SeqTbl
  (seq INTEGER PRIMARY KEY); 
 
@@ -40,21 +40,21 @@ INSERT INTO SeqTbl VALUES (8);
 INSERT INTO SeqTbl VALUES (11);
 INSERT INTO SeqTbl VALUES (12);
 
--- ƒV[ƒPƒ“ƒXƒrƒ…[‚ğì‚éi0`999‚Ü‚Å‚ğƒJƒo[j
+-- ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ãƒ“ãƒ¥ãƒ¼ã‚’ä½œã‚‹ï¼ˆ0ã€œ999ã¾ã§ã‚’ã‚«ãƒãƒ¼ï¼‰
 CREATE VIEW Sequence (seq) AS
 SELECT D1.digit + (D2.digit * 10) + (D3.digit * 100)
   FROM Digits D1
          CROSS JOIN Digits D2
            CROSS JOIN Digits D3;
 
--- ƒV[ƒPƒ“ƒXƒrƒ…[‚©‚ç1`100‚Ü‚Åæ“¾
+-- ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ãƒ“ãƒ¥ãƒ¼ã‹ã‚‰1ã€œ100ã¾ã§å–å¾—
 SELECT seq
   FROM Sequence
  WHERE seq BETWEEN 1 AND 100
  ORDER BY seq;
 
 
--- EXCEPTƒo[ƒWƒ‡ƒ“
+-- EXCEPTãƒãƒ¼ã‚¸ãƒ§ãƒ³
 SELECT seq
   FROM Sequence
  WHERE seq BETWEEN 1 AND 12
@@ -62,101 +62,101 @@ EXCEPT
 SELECT seq
   FROM SeqTbl;
 
--- NOT INƒo[ƒWƒ‡ƒ“
+-- NOT INãƒãƒ¼ã‚¸ãƒ§ãƒ³
 SELECT seq
   FROM Sequence
  WHERE seq BETWEEN 1 AND 12
    AND seq NOT IN (SELECT seq FROM SeqTbl);
 
--- ˜A”Ô‚Ì”ÍˆÍ‚ğ“®“I‚ÉŒˆ’è‚·‚éƒNƒGƒŠ
+-- é€£ç•ªã®ç¯„å›²ã‚’å‹•çš„ã«æ±ºå®šã™ã‚‹ã‚¯ã‚¨ãƒª
 SELECT seq
   FROM Sequence
  WHERE seq BETWEEN (SELECT MIN(seq) FROM SeqTbl)
    AND (SELECT MAX(seq) FROM SeqTbl)
 EXCEPT SELECT seq FROM SeqTbl;
 
--- 3l‚È‚ñ‚Å‚·‚¯‚ÇAÀ‚ê‚Ü‚·‚©H
+-- 3äººãªã‚“ã§ã™ã‘ã©ã€åº§ã‚Œã¾ã™ã‹ï¼Ÿ
 CREATE TABLE Seats
 (seat   INTEGER NOT NULL  PRIMARY KEY,
  status CHAR(2) NOT NULL
- CHECK (status IN ('‹ó', 'è')) ); 
+ CHECK (status IN ('ç©º', 'å ')) ); 
 
-INSERT INTO Seats VALUES (1,  'è');
-INSERT INTO Seats VALUES (2,  'è');
-INSERT INTO Seats VALUES (3,  '‹ó');
-INSERT INTO Seats VALUES (4,  '‹ó');
-INSERT INTO Seats VALUES (5,  '‹ó');
-INSERT INTO Seats VALUES (6,  'è');
-INSERT INTO Seats VALUES (7,  '‹ó');
-INSERT INTO Seats VALUES (8,  '‹ó');
-INSERT INTO Seats VALUES (9,  '‹ó');
-INSERT INTO Seats VALUES (10, '‹ó');
-INSERT INTO Seats VALUES (11, '‹ó');
-INSERT INTO Seats VALUES (12, 'è');
-INSERT INTO Seats VALUES (13, 'è');
-INSERT INTO Seats VALUES (14, '‹ó');
-INSERT INTO Seats VALUES (15, '‹ó');
+INSERT INTO Seats VALUES (1,  'å ');
+INSERT INTO Seats VALUES (2,  'å ');
+INSERT INTO Seats VALUES (3,  'ç©º');
+INSERT INTO Seats VALUES (4,  'ç©º');
+INSERT INTO Seats VALUES (5,  'ç©º');
+INSERT INTO Seats VALUES (6,  'å ');
+INSERT INTO Seats VALUES (7,  'ç©º');
+INSERT INTO Seats VALUES (8,  'ç©º');
+INSERT INTO Seats VALUES (9,  'ç©º');
+INSERT INTO Seats VALUES (10, 'ç©º');
+INSERT INTO Seats VALUES (11, 'ç©º');
+INSERT INTO Seats VALUES (12, 'å ');
+INSERT INTO Seats VALUES (13, 'å ');
+INSERT INTO Seats VALUES (14, 'ç©º');
+INSERT INTO Seats VALUES (15, 'ç©º');
 
 
--- l”•ª‚Ì‹óÈ‚ğ’T‚·F‚»‚Ì1@NOT EXISTS
-SELECT S1.seat AS start_seat, '`' , S2.seat AS end_seat
+-- äººæ•°åˆ†ã®ç©ºå¸­ã‚’æ¢ã™ï¼šãã®1ã€€NOT EXISTS
+SELECT S1.seat AS start_seat, 'ã€œ' , S2.seat AS end_seat
   FROM Seats S1, Seats S2
- WHERE S2.seat = S1.seat + (:head_cnt -1) --n“_‚ÆI“_‚ğŒˆ‚ß‚é
+ WHERE S2.seat = S1.seat + (:head_cnt -1) --å§‹ç‚¹ã¨çµ‚ç‚¹ã‚’æ±ºã‚ã‚‹
    AND NOT EXISTS
         (SELECT *
            FROM Seats S3
           WHERE S3.seat BETWEEN S1.seat AND S2.seat
-            AND S3.status <> '‹ó' );
+            AND S3.status <> 'ç©º' );
 
 
--- Ü‚è•Ô‚µ‚àl—¶
+-- æŠ˜ã‚Šè¿”ã—ã‚‚è€ƒæ…®
 CREATE TABLE Seats2
  ( seat   INTEGER NOT NULL  PRIMARY KEY,
    line_id CHAR(1) NOT NULL,
    status CHAR(2) NOT NULL
-     CHECK (status IN ('‹ó', 'è')) ); 
+     CHECK (status IN ('ç©º', 'å ')) ); 
 
-INSERT INTO Seats2 VALUES (1, 'A', 'è');
-INSERT INTO Seats2 VALUES (2, 'A', 'è');
-INSERT INTO Seats2 VALUES (3, 'A', '‹ó');
-INSERT INTO Seats2 VALUES (4, 'A', '‹ó');
-INSERT INTO Seats2 VALUES (5, 'A', '‹ó');
-INSERT INTO Seats2 VALUES (6, 'B', 'è');
-INSERT INTO Seats2 VALUES (7, 'B', 'è');
-INSERT INTO Seats2 VALUES (8, 'B', '‹ó');
-INSERT INTO Seats2 VALUES (9, 'B', '‹ó');
-INSERT INTO Seats2 VALUES (10,'B', '‹ó');
-INSERT INTO Seats2 VALUES (11,'C', '‹ó');
-INSERT INTO Seats2 VALUES (12,'C', '‹ó');
-INSERT INTO Seats2 VALUES (13,'C', '‹ó');
-INSERT INTO Seats2 VALUES (14,'C', 'è');
-INSERT INTO Seats2 VALUES (15,'C', '‹ó');
+INSERT INTO Seats2 VALUES (1, 'A', 'å ');
+INSERT INTO Seats2 VALUES (2, 'A', 'å ');
+INSERT INTO Seats2 VALUES (3, 'A', 'ç©º');
+INSERT INTO Seats2 VALUES (4, 'A', 'ç©º');
+INSERT INTO Seats2 VALUES (5, 'A', 'ç©º');
+INSERT INTO Seats2 VALUES (6, 'B', 'å ');
+INSERT INTO Seats2 VALUES (7, 'B', 'å ');
+INSERT INTO Seats2 VALUES (8, 'B', 'ç©º');
+INSERT INTO Seats2 VALUES (9, 'B', 'ç©º');
+INSERT INTO Seats2 VALUES (10,'B', 'ç©º');
+INSERT INTO Seats2 VALUES (11,'C', 'ç©º');
+INSERT INTO Seats2 VALUES (12,'C', 'ç©º');
+INSERT INTO Seats2 VALUES (13,'C', 'ç©º');
+INSERT INTO Seats2 VALUES (14,'C', 'å ');
+INSERT INTO Seats2 VALUES (15,'C', 'ç©º');
 
 
--- l”•ª‚Ì‹óÈ‚ğ’T‚·F‚»‚Ì2@ƒEƒBƒ“ƒhƒEŠÖ”
-SELECT seat, '`', seat + (:head_cnt -1)
+-- äººæ•°åˆ†ã®ç©ºå¸­ã‚’æ¢ã™ï¼šãã®2ã€€ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦é–¢æ•°
+SELECT seat, 'ã€œ', seat + (:head_cnt -1)
   FROM (SELECT seat,
                MAX(seat)
                  OVER(ORDER BY seat
                        ROWS BETWEEN (:head_cnt -1) FOLLOWING
                                 AND (:head_cnt -1) FOLLOWING ) AS end_seat
           FROM Seats
-         WHERE status = '‹ó') TMP
+         WHERE status = 'ç©º') TMP
  WHERE end_seat - seat = (:head_cnt -1);
 
 
--- l”•ª‚Ì‹óÈ‚ğ’T‚·Fƒ‰ƒCƒ“‚ÌÜ‚è•Ô‚µ‚àl—¶‚·‚é@NOT EXISTS
-SELECT S1.seat AS start_seat, '`' , S2.seat AS end_seat
+-- äººæ•°åˆ†ã®ç©ºå¸­ã‚’æ¢ã™ï¼šãƒ©ã‚¤ãƒ³ã®æŠ˜ã‚Šè¿”ã—ã‚‚è€ƒæ…®ã™ã‚‹ã€€NOT EXISTS
+SELECT S1.seat AS start_seat, 'ã€œ' , S2.seat AS end_seat
   FROM Seats2 S1, Seats2 S2
- WHERE S2.seat = S1.seat + (:head_cnt -1) --n“_‚ÆI“_‚ğŒˆ‚ß‚é
+ WHERE S2.seat = S1.seat + (:head_cnt -1) --å§‹ç‚¹ã¨çµ‚ç‚¹ã‚’æ±ºã‚ã‚‹
    AND NOT EXISTS
         (SELECT *
            FROM Seats2 S3
           WHERE S3.seat BETWEEN S1.seat AND S2.seat
-            AND ( S3.status <> '‹ó' OR S3.line_id <> S1.line_id));
+            AND ( S3.status <> 'ç©º' OR S3.line_id <> S1.line_id));
 
--- l”•ª‚Ì‹óÈ‚ğ’T‚·Fs‚ÌÜ‚è•Ô‚µ‚àl—¶‚·‚é@ƒEƒBƒ“ƒhƒEŠÖ”
-SELECT seat, '`', seat + (:head_cnt - 1)
+-- äººæ•°åˆ†ã®ç©ºå¸­ã‚’æ¢ã™ï¼šè¡Œã®æŠ˜ã‚Šè¿”ã—ã‚‚è€ƒæ…®ã™ã‚‹ã€€ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦é–¢æ•°
+SELECT seat, 'ã€œ', seat + (:head_cnt - 1)
   FROM (SELECT seat,
                MAX(seat)
                  OVER(PARTITION BY line_id
@@ -164,12 +164,12 @@ SELECT seat, '`', seat + (:head_cnt - 1)
                            ROWS BETWEEN (:head_cnt - 1) FOLLOWING
                                     AND (:head_cnt - 1) FOLLOWING ) AS end_seat
           FROM Seats2
-         WHERE status = '‹ó') TMP
+         WHERE status = 'ç©º') TMP
   WHERE end_seat - seat = (:head_cnt - 1);
 
 
 
--- ’P’²‘‰Á‚Æ’P’²Œ¸­
+-- å˜èª¿å¢—åŠ ã¨å˜èª¿æ¸›å°‘
 CREATE TABLE MyStock
  (deal_date  DATE PRIMARY KEY,
   price      INTEGER ); 
@@ -184,7 +184,7 @@ INSERT INTO MyStock VALUES ('2018-01-16', 920);
 INSERT INTO MyStock VALUES ('2018-01-17', 1000);
 INSERT INTO MyStock VALUES ('2018-01-18', 2000);
 
--- ‘O‰ñæˆø‚©‚çã¸‚µ‚½‚©‚Ç‚¤‚©‚ğ”»’f‚·‚é
+-- å‰å›å–å¼•ã‹ã‚‰ä¸Šæ˜‡ã—ãŸã‹ã©ã†ã‹ã‚’åˆ¤æ–­ã™ã‚‹
 SELECT deal_date, price,
        CASE SIGN(price - MAX(price)
                            OVER(ORDER BY deal_date
@@ -212,9 +212,9 @@ SELECT deal_date, price, row_num
   WHERE diff = 'up';
 
 
--- ©ŒÈŒ‹‡‚ÅƒV[ƒPƒ“ƒX‚ğƒOƒ‹[ƒv‰»
+-- è‡ªå·±çµåˆã§ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã‚’ã‚°ãƒ«ãƒ¼ãƒ—åŒ–
 SELECT MIN(deal_date) AS start_date,
-       '`',
+       'ã€œ',
        MAX(deal_date) AS end_date
   FROM (SELECT M1.deal_date,
                COUNT(M2.row_num) - MIN(M1.row_num) AS gap

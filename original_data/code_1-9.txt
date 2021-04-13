@@ -1,4 +1,4 @@
-/* ƒe[ƒuƒ‹“¯Žm‚ÌƒRƒ“ƒyƒA@W‡‚Ì‘Š“™«ƒ`ƒFƒbƒN */
+/* ãƒ†ãƒ¼ãƒ–ãƒ«åŒå£«ã®ã‚³ãƒ³ãƒšã‚¢ã€€é›†åˆã®ç›¸ç­‰æ€§ãƒã‚§ãƒƒã‚¯ */
 CREATE TABLE Tbl_A
  (keycol  CHAR(1) PRIMARY KEY,
   col_1   INTEGER , 
@@ -11,7 +11,7 @@ CREATE TABLE Tbl_B
   col_2   INTEGER, 
   col_3   INTEGER);
 
-/* “™‚µ‚¢ƒe[ƒuƒ‹“¯Žm‚ÌƒP[ƒX */
+/* ç­‰ã—ã„ãƒ†ãƒ¼ãƒ–ãƒ«åŒå£«ã®ã‚±ãƒ¼ã‚¹ */
 DELETE FROM Tbl_A;
 INSERT INTO Tbl_A VALUES('A', 2, 3, 4);
 INSERT INTO Tbl_A VALUES('B', 0, 7, 9);
@@ -23,7 +23,7 @@ INSERT INTO Tbl_B VALUES('B', 0, 7, 9);
 INSERT INTO Tbl_B VALUES('C', 5, 1, 6);
 
 
-/* uBv‚Ìs‚ª‘Šˆá‚·‚éƒP[ƒX */
+/* ã€ŒBã€ã®è¡ŒãŒç›¸é•ã™ã‚‹ã‚±ãƒ¼ã‚¹ */
 DELETE FROM Tbl_A;
 INSERT INTO Tbl_A VALUES('A', 2, 3, 4);
 INSERT INTO Tbl_A VALUES('B', 0, 7, 9);
@@ -35,7 +35,7 @@ INSERT INTO Tbl_B VALUES('B', 0, 7, 8);
 INSERT INTO Tbl_B VALUES('C', 5, 1, 6);
 
 
-/* NULL‚ðŠÜ‚ÞƒP[ƒXi“™‚µ‚¢j */
+/* NULLã‚’å«ã‚€ã‚±ãƒ¼ã‚¹ï¼ˆç­‰ã—ã„ï¼‰ */
 DELETE FROM Tbl_A;
 INSERT INTO Tbl_A VALUES('A', NULL, 3, 4);
 INSERT INTO Tbl_A VALUES('B', 0, 7, 9);
@@ -47,7 +47,7 @@ INSERT INTO Tbl_B VALUES('B', 0, 7, 9);
 INSERT INTO Tbl_B VALUES('C', NULL, NULL, NULL);
 
 
-/* NULL‚ðŠÜ‚ÞƒP[ƒXiuCv‚Ìs‚ªˆÙ‚È‚éj */
+/* NULLã‚’å«ã‚€ã‚±ãƒ¼ã‚¹ï¼ˆã€ŒCã€ã®è¡ŒãŒç•°ãªã‚‹ï¼‰ */
 DELETE FROM Tbl_A;
 INSERT INTO Tbl_A VALUES('A', NULL, 3, 4);
 INSERT INTO Tbl_A VALUES('B', 0, 7, 9);
@@ -59,7 +59,7 @@ INSERT INTO Tbl_B VALUES('B', 0, 7, 9);
 INSERT INTO Tbl_B VALUES('C', 0, NULL, NULL);
 
 
-/* 3. ·W‡‚ÅŠÖŒWœŽZ‚ð•\Œ»‚·‚é */
+/* 3. å·®é›†åˆã§é–¢ä¿‚é™¤ç®—ã‚’è¡¨ç¾ã™ã‚‹ */
 CREATE TABLE Skills 
 (skill VARCHAR(32),
  PRIMARY KEY(skill));
@@ -73,55 +73,55 @@ INSERT INTO Skills VALUES('Oracle');
 INSERT INTO Skills VALUES('UNIX');
 INSERT INTO Skills VALUES('Java');
 
-INSERT INTO EmpSkills VALUES('‘Š“c', 'Oracle');
-INSERT INTO EmpSkills VALUES('‘Š“c', 'UNIX');
-INSERT INTO EmpSkills VALUES('‘Š“c', 'Java');
-INSERT INTO EmpSkills VALUES('‘Š“c', 'C#');
-INSERT INTO EmpSkills VALUES('_è', 'Oracle');
-INSERT INTO EmpSkills VALUES('_è', 'UNIX');
-INSERT INTO EmpSkills VALUES('_è', 'Java');
-INSERT INTO EmpSkills VALUES('•½ˆä', 'UNIX');
-INSERT INTO EmpSkills VALUES('•½ˆä', 'Oracle');
-INSERT INTO EmpSkills VALUES('•½ˆä', 'PHP');
-INSERT INTO EmpSkills VALUES('•½ˆä', 'Perl');
-INSERT INTO EmpSkills VALUES('•½ˆä', 'C++');
-INSERT INTO EmpSkills VALUES('Žá“c•”', 'Perl');
-INSERT INTO EmpSkills VALUES('“n—ˆ', 'Oracle');
+INSERT INTO EmpSkills VALUES('ç›¸ç”°', 'Oracle');
+INSERT INTO EmpSkills VALUES('ç›¸ç”°', 'UNIX');
+INSERT INTO EmpSkills VALUES('ç›¸ç”°', 'Java');
+INSERT INTO EmpSkills VALUES('ç›¸ç”°', 'C#');
+INSERT INTO EmpSkills VALUES('ç¥žå´Ž', 'Oracle');
+INSERT INTO EmpSkills VALUES('ç¥žå´Ž', 'UNIX');
+INSERT INTO EmpSkills VALUES('ç¥žå´Ž', 'Java');
+INSERT INTO EmpSkills VALUES('å¹³äº•', 'UNIX');
+INSERT INTO EmpSkills VALUES('å¹³äº•', 'Oracle');
+INSERT INTO EmpSkills VALUES('å¹³äº•', 'PHP');
+INSERT INTO EmpSkills VALUES('å¹³äº•', 'Perl');
+INSERT INTO EmpSkills VALUES('å¹³äº•', 'C++');
+INSERT INTO EmpSkills VALUES('è‹¥ç”°éƒ¨', 'Perl');
+INSERT INTO EmpSkills VALUES('æ¸¡æ¥', 'Oracle');
 
-/* 4. “™‚µ‚¢•”•ªW‡‚ðŒ©‚Â‚¯‚é */
+/* 4. ç­‰ã—ã„éƒ¨åˆ†é›†åˆã‚’è¦‹ã¤ã‘ã‚‹ */
 CREATE TABLE SupParts
 (sup  CHAR(32) NOT NULL,
  part CHAR(32) NOT NULL,
  PRIMARY KEY(sup, part));
 
-INSERT INTO SupParts VALUES('A',  'ƒ{ƒ‹ƒg');
-INSERT INTO SupParts VALUES('A',  'ƒiƒbƒg');
-INSERT INTO SupParts VALUES('A',  'ƒpƒCƒv');
-INSERT INTO SupParts VALUES('B',  'ƒ{ƒ‹ƒg');
-INSERT INTO SupParts VALUES('B',  'ƒpƒCƒv');
-INSERT INTO SupParts VALUES('C',  'ƒ{ƒ‹ƒg');
-INSERT INTO SupParts VALUES('C',  'ƒiƒbƒg');
-INSERT INTO SupParts VALUES('C',  'ƒpƒCƒv');
-INSERT INTO SupParts VALUES('D',  'ƒ{ƒ‹ƒg');
-INSERT INTO SupParts VALUES('D',  'ƒpƒCƒv');
-INSERT INTO SupParts VALUES('E',  'ƒqƒ…[ƒY');
-INSERT INTO SupParts VALUES('E',  'ƒiƒbƒg');
-INSERT INTO SupParts VALUES('E',  'ƒpƒCƒv');
-INSERT INTO SupParts VALUES('F',  'ƒqƒ…[ƒY');
+INSERT INTO SupParts VALUES('A',  'ãƒœãƒ«ãƒˆ');
+INSERT INTO SupParts VALUES('A',  'ãƒŠãƒƒãƒˆ');
+INSERT INTO SupParts VALUES('A',  'ãƒ‘ã‚¤ãƒ—');
+INSERT INTO SupParts VALUES('B',  'ãƒœãƒ«ãƒˆ');
+INSERT INTO SupParts VALUES('B',  'ãƒ‘ã‚¤ãƒ—');
+INSERT INTO SupParts VALUES('C',  'ãƒœãƒ«ãƒˆ');
+INSERT INTO SupParts VALUES('C',  'ãƒŠãƒƒãƒˆ');
+INSERT INTO SupParts VALUES('C',  'ãƒ‘ã‚¤ãƒ—');
+INSERT INTO SupParts VALUES('D',  'ãƒœãƒ«ãƒˆ');
+INSERT INTO SupParts VALUES('D',  'ãƒ‘ã‚¤ãƒ—');
+INSERT INTO SupParts VALUES('E',  'ãƒ’ãƒ¥ãƒ¼ã‚º');
+INSERT INTO SupParts VALUES('E',  'ãƒŠãƒƒãƒˆ');
+INSERT INTO SupParts VALUES('E',  'ãƒ‘ã‚¤ãƒ—');
+INSERT INTO SupParts VALUES('F',  'ãƒ’ãƒ¥ãƒ¼ã‚º');
 
-/* 5. d•¡s‚ðíœ‚·‚é‚‘¬‚ÈƒNƒGƒŠ
-PostgreSQL‚Å‚Íuwith oidsv‚ðCREATE TABLE•¶‚ÌÅŒã‚É’Ç‰Á‚·‚é‚±‚Æ */
+/* 5. é‡è¤‡è¡Œã‚’å‰Šé™¤ã™ã‚‹é«˜é€Ÿãªã‚¯ã‚¨ãƒª
+PostgreSQLã§ã¯ã€Œwith oidsã€ã‚’CREATE TABLEæ–‡ã®æœ€å¾Œã«è¿½åŠ ã™ã‚‹ã“ã¨ */
 CREATE TABLE Products
 (name  CHAR(16),
  price INTEGER);
 
-INSERT INTO Products VALUES('‚è‚ñ‚²',  50);
-INSERT INTO Products VALUES('‚Ý‚©‚ñ', 100);
-INSERT INTO Products VALUES('‚Ý‚©‚ñ', 100);
-INSERT INTO Products VALUES('‚Ý‚©‚ñ', 100);
-INSERT INTO Products VALUES('ƒoƒiƒi',  80);
+INSERT INTO Products VALUES('ã‚Šã‚“ã”',  50);
+INSERT INTO Products VALUES('ã¿ã‹ã‚“', 100);
+INSERT INTO Products VALUES('ã¿ã‹ã‚“', 100);
+INSERT INTO Products VALUES('ã¿ã‹ã‚“', 100);
+INSERT INTO Products VALUES('ãƒãƒŠãƒŠ',  80);
 
-/* ƒe[ƒuƒ‹“¯Žm‚ÌƒRƒ“ƒyƒAFŠî–{•Ò*/
+/* ãƒ†ãƒ¼ãƒ–ãƒ«åŒå£«ã®ã‚³ãƒ³ãƒšã‚¢ï¼šåŸºæœ¬ç·¨*/
 SELECT COUNT(*) AS row_cnt
   FROM ( SELECT * 
            FROM   tbl_A 
@@ -129,10 +129,10 @@ SELECT COUNT(*) AS row_cnt
          SELECT * 
            FROM   tbl_B ) TMP;
 
-/* ƒe[ƒuƒ‹“¯Žm‚ÌƒRƒ“ƒyƒAF‰ž—p•ÒiOracle‚Å‚Í’Ê‚ç‚È‚¢j */
+/* ãƒ†ãƒ¼ãƒ–ãƒ«åŒå£«ã®ã‚³ãƒ³ãƒšã‚¢ï¼šå¿œç”¨ç·¨ï¼ˆOracleã§ã¯é€šã‚‰ãªã„ï¼‰ */
 SELECT CASE WHEN COUNT(*) = 0 
-            THEN '“™‚µ‚¢'
-            ELSE 'ˆÙ‚È‚é' END AS result
+            THEN 'ç­‰ã—ã„'
+            ELSE 'ç•°ãªã‚‹' END AS result
   FROM ((SELECT * FROM  tbl_A
          UNION
          SELECT * FROM  tbl_B) 
@@ -141,7 +141,7 @@ SELECT CASE WHEN COUNT(*) = 0
          INTERSECT 
          SELECT * FROM  tbl_B)) TMP;
 
-/* ƒe[ƒuƒ‹‚É‘Î‚·‚édiffF”r‘¼“I˜aW‡‚ð‹‚ß‚é */
+/* ãƒ†ãƒ¼ãƒ–ãƒ«ã«å¯¾ã™ã‚‹diffï¼šæŽ’ä»–çš„å’Œé›†åˆã‚’æ±‚ã‚ã‚‹ */
 (SELECT * FROM  tbl_A
    EXCEPT
  SELECT * FROM  tbl_B)
@@ -150,7 +150,7 @@ SELECT CASE WHEN COUNT(*) = 0
    EXCEPT
  SELECT * FROM  tbl_A);
 
-/* ·W‡‚ÅŠÖŒWœŽZiè—]‚ðŽ‚Á‚½œŽZj */
+/* å·®é›†åˆã§é–¢ä¿‚é™¤ç®—ï¼ˆå‰°ä½™ã‚’æŒã£ãŸé™¤ç®—ï¼‰ */
 SELECT DISTINCT emp
   FROM EmpSkills ES1
  WHERE NOT EXISTS
@@ -161,20 +161,20 @@ SELECT DISTINCT emp
            FROM EmpSkills ES2
           WHERE ES1.emp = ES2.emp);
 
-/* “™‚µ‚¢•”•ªW‡‚ðŒ©‚Â‚¯‚é(p.134) */
+/* ç­‰ã—ã„éƒ¨åˆ†é›†åˆã‚’è¦‹ã¤ã‘ã‚‹(p.134) */
 SELECT SP1.sup, SP2.sup
   FROM SupParts SP1, SupParts SP2 
- WHERE SP1.sup < SP2.sup              /* ‹ÆŽÒ‚Ì‘g‚Ý‡‚í‚¹‚ðì‚é */
-   AND SP1.part = SP2.part            /* ðŒ‚PD“¯‚¶Ží—Þ‚Ì•”•i‚ðˆµ‚¤ */
+ WHERE SP1.sup < SP2.sup              /* æ¥­è€…ã®çµ„ã¿åˆã‚ã›ã‚’ä½œã‚‹ */
+   AND SP1.part = SP2.part            /* æ¡ä»¶ï¼‘ï¼ŽåŒã˜ç¨®é¡žã®éƒ¨å“ã‚’æ‰±ã† */
 GROUP BY SP1.sup, SP2.sup 
-HAVING COUNT(*) = (SELECT COUNT(*)    /* ðŒ‚QD“¯”‚Ì•”•i‚ðˆµ‚¤ */
+HAVING COUNT(*) = (SELECT COUNT(*)    /* æ¡ä»¶ï¼’ï¼ŽåŒæ•°ã®éƒ¨å“ã‚’æ‰±ã† */
                      FROM SupParts SP3 
                     WHERE SP3.sup = SP1.sup)
    AND COUNT(*) = (SELECT COUNT(*) 
                      FROM SupParts SP4 
                     WHERE SP4.sup = SP2.sup);
 
-/* d•¡s‚ðíœ‚·‚é‚‘¬‚ÈƒNƒGƒŠ‚PF•âW‡‚ðEXCEPT‚Å‹‚ß‚é */
+/* é‡è¤‡è¡Œã‚’å‰Šé™¤ã™ã‚‹é«˜é€Ÿãªã‚¯ã‚¨ãƒªï¼‘ï¼šè£œé›†åˆã‚’EXCEPTã§æ±‚ã‚ã‚‹ */
 DELETE FROM Products
  WHERE rowid IN ( SELECT rowid
                     FROM Products 
@@ -183,7 +183,7 @@ DELETE FROM Products
                     FROM Products 
                    GROUP BY name, price);
 
-/* d•¡s‚ðíœ‚·‚é‚‘¬‚ÈƒNƒGƒŠ‚QF•âW‡‚ðNOT IN ‚Å‹‚ß‚é */
+/* é‡è¤‡è¡Œã‚’å‰Šé™¤ã™ã‚‹é«˜é€Ÿãªã‚¯ã‚¨ãƒªï¼’ï¼šè£œé›†åˆã‚’NOT IN ã§æ±‚ã‚ã‚‹ */
 DELETE FROM Products 
  WHERE rowid NOT IN ( SELECT MAX(rowid)
                         FROM Products 

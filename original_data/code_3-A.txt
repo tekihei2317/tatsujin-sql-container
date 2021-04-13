@@ -192,7 +192,7 @@ DELETE FROM
 
 演習問題5-①：配列テーブル行持ちの場合
 
-/* 5-1：配列テーブル――行持ちの場合 */
+/* 5-1：配列テーブル——行持ちの場合 */
 CREATE TABLE ArrayTbl2
  (key   CHAR(1) NOT NULL,
     i   INTEGER NOT NULL,
@@ -533,7 +533,7 @@ SELECT emp
 HAVING COUNT(*) = (SELECT COUNT(*) FROM Skills);
 
 
-演習問題10-①：欠番をすべて求める―― NOT EXISTSと外部結合
+演習問題10-①：欠番をすべて求める—— NOT EXISTSと外部結合
 
 
 -- NOT EXISTS バージョン
@@ -551,7 +551,7 @@ SELECT N.seq
  WHERE N.seq BETWEEN 1 AND 12
    AND S.seq IS NULL;
 
-演習問題10-②：シーケンスを求める――集合指向的発想
+演習問題10-②：シーケンスを求める——集合指向的発想
 
 SELECT S1.seat AS start_seat, ' ～ ' , S2.seat AS end_seat
   FROM Seats S1, Seats S2, Seats S3

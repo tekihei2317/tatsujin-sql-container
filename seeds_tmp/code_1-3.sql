@@ -3,57 +3,57 @@ CREATE TABLE Products (
   price INTEGER NOT NULL
 );
 
---d•¡‡—ñE‡—ñE‘g‚Ý‡‚í‚¹
+--é‡è¤‡é †åˆ—ãƒ»é †åˆ—ãƒ»çµ„ã¿åˆã‚ã›
 DELETE FROM
   Products;
 
 INSERT INTO
   Products
 VALUES
-  ('‚è‚ñ‚²', 100);
+  ('ã‚Šã‚“ã”', 100);
 
 INSERT INTO
   Products
 VALUES
-  ('‚Ý‚©‚ñ', 50);
+  ('ã¿ã‹ã‚“', 50);
 
 INSERT INTO
   Products
 VALUES
-  ('ƒoƒiƒi', 80);
+  ('ãƒãƒŠãƒŠ', 80);
 
 CREATE TABLE Products (
   name VARCHAR(16) NOT NULL,
   price INTEGER NOT NULL
 );
 
---d•¡‚·‚éƒŒƒR[ƒh
+--é‡è¤‡ã™ã‚‹ãƒ¬ã‚³ãƒ¼ãƒ‰
 INSERT INTO
   Products
 VALUES
-  ('‚è‚ñ‚²', 50);
+  ('ã‚Šã‚“ã”', 50);
 
 INSERT INTO
   Products
 VALUES
-  ('‚Ý‚©‚ñ', 100);
+  ('ã¿ã‹ã‚“', 100);
 
 INSERT INTO
   Products
 VALUES
-  ('‚Ý‚©‚ñ', 100);
+  ('ã¿ã‹ã‚“', 100);
 
 INSERT INTO
   Products
 VALUES
-  ('‚Ý‚©‚ñ', 100);
+  ('ã¿ã‹ã‚“', 100);
 
 INSERT INTO
   Products
 VALUES
-  ('ƒoƒiƒi', 80);
+  ('ãƒãƒŠãƒŠ', 80);
 
---•”•ª“I‚É•sˆê’v‚ÈƒL[‚ÌŒŸõ
+--éƒ¨åˆ†çš„ã«ä¸ä¸€è‡´ãªã‚­ãƒ¼ã®æ¤œç´¢
 CREATE TABLE Addresses (
   name VARCHAR(32),
   family_id INTEGER,
@@ -64,32 +64,32 @@ CREATE TABLE Addresses (
 INSERT INTO
   Addresses
 VALUES
-  ('‘O“c ‹`–¾', '100', '“Œ‹ž“s`‹æŒÕƒm–å3-2-29');
+  ('å‰ç”° ç¾©æ˜Ž', '100', 'æ±äº¬éƒ½æ¸¯åŒºè™ŽãƒŽé–€3-2-29');
 
 INSERT INTO
   Addresses
 VALUES
-  ('‘O“c —R”ü', '100', '“Œ‹ž“s`‹æŒÕƒm–å3-2-92');
+  ('å‰ç”° ç”±ç¾Ž', '100', 'æ±äº¬éƒ½æ¸¯åŒºè™ŽãƒŽé–€3-2-92');
 
 INSERT INTO
   Addresses
 VALUES
-  ('‰Á“¡ ’ƒ', '200', '“Œ‹ž“sVh‹æ¼Vh2-8-1');
+  ('åŠ è—¤ èŒ¶', '200', 'æ±äº¬éƒ½æ–°å®¿åŒºè¥¿æ–°å®¿2-8-1');
 
 INSERT INTO
   Addresses
 VALUES
-  ('‰Á“¡ Ÿ', '200', '“Œ‹ž“sVh‹æ¼Vh2-8-1');
+  ('åŠ è—¤ å‹', '200', 'æ±äº¬éƒ½æ–°å®¿åŒºè¥¿æ–°å®¿2-8-1');
 
 INSERT INTO
   Addresses
 VALUES
-  ('ƒz[ƒ€ƒY', '300', 'ƒx[ƒJ[ŠX221B');
+  ('ãƒ›ãƒ¼ãƒ ã‚º', '300', 'ãƒ™ãƒ¼ã‚«ãƒ¼è¡—221B');
 
 INSERT INTO
   Addresses
 VALUES
-  ('ƒƒgƒ\ƒ“', '400', 'ƒx[ƒJ[ŠX221B');
+  ('ãƒ¯ãƒˆã‚½ãƒ³', '400', 'ãƒ™ãƒ¼ã‚«ãƒ¼è¡—221B');
 
 DELETE FROM
   Products;
@@ -97,34 +97,34 @@ DELETE FROM
 INSERT INTO
   Products
 VALUES
-  ('‚è‚ñ‚²', 50);
+  ('ã‚Šã‚“ã”', 50);
 
 INSERT INTO
   Products
 VALUES
-  ('‚Ý‚©‚ñ', 100);
+  ('ã¿ã‹ã‚“', 100);
 
 INSERT INTO
   Products
 VALUES
-  ('‚Ô‚Ç‚¤', 50);
+  ('ã¶ã©ã†', 50);
 
 INSERT INTO
   Products
 VALUES
-  ('ƒXƒCƒJ', 80);
+  ('ã‚¹ã‚¤ã‚«', 80);
 
 INSERT INTO
   Products
 VALUES
-  ('ƒŒƒ‚ƒ“', 30);
+  ('ãƒ¬ãƒ¢ãƒ³', 30);
 
 INSERT INTO
   Products
 VALUES
-  ('‚¢‚¿‚²', 100);
+  ('ã„ã¡ã”', 100);
 
 INSERT INTO
   Products
 VALUES
-  ('ƒoƒiƒi', 100);
+  ('ãƒãƒŠãƒŠ', 100);
