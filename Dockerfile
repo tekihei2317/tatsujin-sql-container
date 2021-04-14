@@ -1,7 +1,6 @@
 FROM mysql
 
 ENV MYSQL_ROOT_PASSWORD=password
-ENV MYSQL_DATABASE=tatsujin
 
 # 日本語入力するための設定
 # シーダーに日本語を入れると怒られるため
