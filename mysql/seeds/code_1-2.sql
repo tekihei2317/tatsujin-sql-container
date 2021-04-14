@@ -54,3 +54,25 @@ VALUES ('2018-02-08', 780);
 
 INSERT INTO LoadSample
 VALUES ('2018-02-12', 1000);
+
+create table ServerLoadSample (
+  server varchar(1),
+  sample_date date,
+  load_val int
+);
+
+insert into ServerLoadSample values('A', '2018-02-01', 1024);
+insert into ServerLoadSample values('A', '2018-02-02', 2366);
+insert into ServerLoadSample values('A', '2018-02-05', 2366);
+insert into ServerLoadSample values('A', '2018-02-07', 985);
+insert into ServerLoadSample values('A', '2018-02-08', 780);
+insert into ServerLoadSample values('A', '2018-02-12', 1000);
+insert into ServerLoadSample values('B', '2018-02-01', 54);
+insert into ServerLoadSample values('B', '2018-02-02', 39008);
+insert into ServerLoadSample values('B', '2018-02-03', 2900);
+insert into ServerLoadSample values('B', '2018-02-04', 556);
+insert into ServerLoadSample values('B', '2018-02-05', 12600);
+insert into ServerLoadSample values('B', '2018-02-06', 7309);
+insert into ServerLoadSample values('C', '2018-02-01', 1000);
+insert into ServerLoadSample values('C', '2018-02-07', 2000);
+insert into ServerLoadSample values('C', '2018-02-16', 500);
