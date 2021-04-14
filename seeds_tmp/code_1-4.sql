@@ -3,22 +3,22 @@ CREATE TABLE Students (name CHAR(16) PRIMARY KEY, age INTEGER);
 INSERT INTO
   Students
 VALUES
-  ('ブラウン', 22);
+  ('繝悶Λ繧ｦ繝ｳ', 22);
 
 INSERT INTO
   Students
 VALUES
-  ('ラリー', 19);
+  ('繝ｩ繝ｪ繝ｼ', 19);
 
 INSERT INTO
   Students
 VALUES
-  ('ジョン', NULL);
+  ('繧ｸ繝ｧ繝ｳ', NULL);
 
 INSERT INTO
   Students
 VALUES
-  ('ボギー', 21);
+  ('繝懊ぐ繝ｼ', 21);
 
 CREATE TABLE EmptyStr (str CHAR(8), description CHAR(16));
 
