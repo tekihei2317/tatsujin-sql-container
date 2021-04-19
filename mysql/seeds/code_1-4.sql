@@ -1,3 +1,6 @@
+create database Chapter4;
+use Chapter4;
+
 CREATE TABLE Students (name CHAR(16) PRIMARY KEY, age INTEGER);
 
 INSERT INTO Students VALUES ('ブラウン', 22);
