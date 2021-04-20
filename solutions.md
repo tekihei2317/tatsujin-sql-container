@@ -239,3 +239,5 @@ from Students;
 -- expr1 = expr2 が true の場合は NULL を返し、それ以外の場合は expr1 を返します。これは、CASE WHEN expr1 = expr2 THEN NULL ELSE expr1 END と同じです。
 -- これ用途ある..?
 ```
+
+# 5章 Exists
