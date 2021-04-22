@@ -365,3 +365,120 @@ where not exists (
 MySQLはALL/ANYの引数がサブクエリだったので、できなかったです。
 
 演習問題
+1. 値がすべて1のエンティティを取得する(行持ち)
+```sql
+-- EXISTS(x)
+-- 以下だとすべてNULLの'A'も選ばれた
+-- 理由: すべてNULLの場合、whereの結果がunknownになって、1行も選択されないため
+select distinct key1
+from ArrayTbl2 A1
+where not exists (
+  select * from ArrayTbl2 A2
+  where
+    A1.key1 = A2.key1 and 
+    A2.val != 1
+);
+
+-- EXISTS(o)
+select distinct key1
+from ArrayTbl2 A1
+where not exists (
+  select * from ArrayTbl2 A2
+  where
+    A1.key1 = A2.key1 and 
+    (A2.val is null or A2.val != 1)
+);
+
+-- HAVING句
+select key1
+from ArrayTbl2
+group by key1
+having count(*) = count(val = 1);
+```
+2. ちょうど1番の工程まで終わっているプロジェクトを求める(ALLを使う)
+```sql
+select distinct project_id
+from Projects P1
+where
+  '完了' = all(
+    select status from Projects P2
+    where P1.project_id = P2.project_id and P2.step_nbr <= 1
+  ) and
+  '待機' = all(
+    select status from Projects P2
+    where P1.project_id = P2.project_id and P2.step_nbr > 1
+  );
+-- 解答例
+select distinct project_id
+from Projects P1
+where 'o' = ALL(
+  select
+    case
+      when P2.step_nbr <= 1 and P2.status = '完了' then 'o'
+      when P2.step_nbr > 1 and P2.status = '待機' then 'o'
+      else 'x'
+    end
+  from Projects P2
+  where P1.project_id = P2.project_id
+);
+
+-- これでもいいかな？
+-- 1のところ0と'o'にしたら同じ結果が帰ってきたのだけれど、'o'って0と同じ扱い?
+select distinct project_id
+from Projects P1
+where 1 = ALL(
+  select
+    P2.step_nbr <= 1 and P2.status = '完了' or 
+    P2.step_nbr > 1 and P2.status = '待機'
+  from Projects P2
+  where P1.project_id = P2.project_id
+);
+```
+3. 1から100までの素数を列挙する
+```sql
+-- 素数:=1と自身以外に約数を持たない(1は除く)
+create table numbers (
+	with digits(number) as (
+	  select 0 union all
+	  select 1 union all
+	  select 2 union all
+	  select 3 union all
+	  select 4 union all
+	  select 5 union all
+	  select 6 union all
+	  select 7 union all
+	  select 8 union all
+	  select 9
+	)
+
+	select D1.number + D2.number * 10 as number
+	from digits D1, digits D2
+	where D1.number + D2.number > 1
+	order by number
+);
+
+select * from numbers N1
+where not exists (
+  select * from numbers N2
+  where
+    N2.number < N1.number and N1.number mod N2.number = 0
+);
+```
+```sql
+-- 再帰with(よく分かってない)
+with recursive numbers(number) as (
+  select 2
+  union all
+
+  select number + 1
+  from numbers
+  where number + 1 < 100
+)
+
+select * from numbers N1
+where not exists (
+  select * from numbers N2
+  where
+    N2.number < N1.number and N1.number mod N2.number = 0
+);
+```
