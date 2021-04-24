@@ -10,3 +10,12 @@ services:
     volumes:
       - ./mysql/conf/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./mysql/seeds:/docker-entrypoint-initdb.d
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    environment:
+      # hydraとpepa-linha-darkが使えませんでした
+      #   この２つはdesigns/*/adminer.cssが無かったです
+      - ADMINER_DESIGN=pappu687
+      # - ADMINER_DESIGN=pepa-linha # デザインは良いのですがウィンドウ幅からはみ出ていました
