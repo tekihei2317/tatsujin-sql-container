@@ -15,28 +15,6 @@ CREATE TABLE PopTbl (
 
 **入力(PopTbl)**
 
-<details>
-<summary>INSERT文</summary>
-
-```sql
-CREATE TABLE PopTbl (
-  pref_name VARCHAR(32) PRIMARY KEY,
-  population INTEGER NOT NULL
-);
-
-INSERT INTO PopTbl VALUES ('徳島', 100);
-INSERT INTO PopTbl VALUES ('香川', 200);
-INSERT INTO PopTbl VALUES ('愛媛', 150);
-INSERT INTO PopTbl VALUES ('高知', 200);
-INSERT INTO PopTbl VALUES ('福岡', 300);
-INSERT INTO PopTbl VALUES ('佐賀', 100);
-INSERT INTO PopTbl VALUES ('長崎', 200);
-INSERT INTO PopTbl VALUES ('東京', 400);
-INSERT INTO PopTbl VALUES ('群馬', 50);
-```
-
-</details>
-
 | pref_name | population |
 |:-:|-:|
 | 佐賀      |        100 |
@@ -49,6 +27,22 @@ INSERT INTO PopTbl VALUES ('群馬', 50);
 | 香川      |        200 |
 | 高知      |        200 |
 
+<details>
+<summary>INSERT文</summary>
+
+```sql
+INSERT INTO PopTbl VALUES ('徳島', 100);
+INSERT INTO PopTbl VALUES ('香川', 200);
+INSERT INTO PopTbl VALUES ('愛媛', 150);
+INSERT INTO PopTbl VALUES ('高知', 200);
+INSERT INTO PopTbl VALUES ('福岡', 300);
+INSERT INTO PopTbl VALUES ('佐賀', 100);
+INSERT INTO PopTbl VALUES ('長崎', 200);
+INSERT INTO PopTbl VALUES ('東京', 400);
+INSERT INTO PopTbl VALUES ('群馬', 50);
+```
+</details>
+
 **出力**
 | district  | population |
 |:-:|-:|
@@ -58,7 +52,6 @@ INSERT INTO PopTbl VALUES ('群馬', 50);
 
 <details>
 <summary>解答例</summary>
-<div>
 
 ```sql
 select
@@ -72,7 +65,6 @@ from PopTbl
 group by district
 ;
 ```
-</div>
 </details>
 
 ### Problem - 地方ごとの人口の合計
