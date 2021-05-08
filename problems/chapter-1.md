@@ -2,9 +2,41 @@
 ## 本文
 ### Problem - 地方ごとの人口の合計
 
-県名と人口のテーブルが与えられます。四国地方と、九州地方と、その他の地方の人口を求めてください。
+県名と人口のテーブル（PopTbl）が与えられます。四国地方と、九州地方と、その他の地方の人口を求めてください。
 
-**入力**
+**テーブル定義**
+
+```sql
+CREATE TABLE PopTbl (
+  pref_name VARCHAR(32) PRIMARY KEY,
+  population INTEGER NOT NULL
+);
+```
+
+**入力(PopTbl)**
+
+<details>
+<summary>INSERT文</summary>
+
+```sql
+CREATE TABLE PopTbl (
+  pref_name VARCHAR(32) PRIMARY KEY,
+  population INTEGER NOT NULL
+);
+
+INSERT INTO PopTbl VALUES ('徳島', 100);
+INSERT INTO PopTbl VALUES ('香川', 200);
+INSERT INTO PopTbl VALUES ('愛媛', 150);
+INSERT INTO PopTbl VALUES ('高知', 200);
+INSERT INTO PopTbl VALUES ('福岡', 300);
+INSERT INTO PopTbl VALUES ('佐賀', 100);
+INSERT INTO PopTbl VALUES ('長崎', 200);
+INSERT INTO PopTbl VALUES ('東京', 400);
+INSERT INTO PopTbl VALUES ('群馬', 50);
+```
+
+</details>
+
 | pref_name | population |
 |:-:|-:|
 | 佐賀      |        100 |
@@ -17,7 +49,7 @@
 | 香川      |        200 |
 | 高知      |        200 |
 
-出力
+**出力**
 | district  | population |
 |:-:|-:|
 | 九州      |        600 |
