@@ -161,3 +161,135 @@ group by pref_name
 ;
 ```
 </details>
+
+### Problem - テーブル同士のマッチング
+
+講座を表すテーブル（CourseMaster）と、開講している講座を表すテーブル（OpenCourses）が与えられます。以下の例のように、ある講座が何月に開講しているかが分かるような表を作成してください。
+
+**テーブル定義**
+
+```sql
+
+CREATE TABLE CourseMaster (
+  course_id INTEGER PRIMARY KEY,
+  course_name VARCHAR(32) NOT NULL
+);
+
+CREATE TABLE OpenCourses (
+  month INTEGER,
+  course_id INTEGER,
+  PRIMARY KEY(month, course_id)
+);
+```
+
+**入出力例**
+
+<details>
+<summary>INSERT文</summary>
+
+```sql
+
+INSERT INTO CourseMaster VALUES (1, '経理入門');
+INSERT INTO CourseMaster VALUES (2, '財務知識');
+INSERT INTO CourseMaster VALUES (3, '簿記検定');
+INSERT INTO CourseMaster VALUES (4, '税理士');
+
+INSERT INTO OpenCourses VALUES (201806, 1);
+INSERT INTO OpenCourses VALUES (201806, 3);
+INSERT INTO OpenCourses VALUES (201806, 4);
+INSERT INTO OpenCourses VALUES (201807, 4);
+INSERT INTO OpenCourses VALUES (201808, 2);
+INSERT INTO OpenCourses VALUES (201808, 4);
+```
+</details>
+
+```
+入力
+
+CourseMaster
++-----------+--------------+
+| course_id | course_name  |
++-----------+--------------+
+|         1 | 経理入門     |
+|         2 | 財務知識     |
+|         3 | 簿記検定     |
+|         4 | 税理士       |
++-----------+--------------+
+
+OpenCourses
++--------+-----------+
+| month  | course_id |
++--------+-----------+
+| 201806 |         1 |
+| 201806 |         3 |
+| 201806 |         4 |
+| 201807 |         4 |
+| 201808 |         2 |
+| 201808 |         4 |
++--------+-----------+
+
+出力
++--------------+------+------+------+
+| course_name  | 6月  | 7月  | 8月  |
++--------------+------+------+------+
+| 経理入門     | o    | x    | x    |
+| 財務知識     | x    | x    | o    |
+| 簿記検定     | o    | x    | x    |
+| 税理士       | o    | o    | o    |
++--------------+------+------+------+
+
+```
+
+<details>
+<summary>解答例</summary>
+
+```sql
+-- IN述語
+select
+  CM.course_name
+  , case
+    when CM.course_id in (select course_id from OpenCourses where month = 201806)
+      then 'o'
+    else 'x'
+  end as '6月'
+  , case
+    when CM.course_id in (select course_id from OpenCourses where month = 201807)
+      then 'o'
+    else 'x'
+  end as '7月'
+  , case
+    when CM.course_id in (select course_id from OpenCourses where month = 201808)
+      then 'o'
+    else 'x'
+  end as '8月'
+from CourseMaster CM
+;
+
+-- EXISTS述語
+select
+  CM.course_name
+  , case
+    when
+      exists (
+        select * from OpenCourses OC where OC.month = 201806 and OC.course_id = CM.course_id
+      ) then 'o'
+    else 'x'
+  end as '6月'
+  , case
+    when
+      exists (
+        select * from OpenCourses OC where OC.month = 201807 and OC.course_id = CM.course_id
+      ) then 'o'
+    else 'x'
+  end as '7月'
+  , case
+    when
+      exists (
+        select * from OpenCourses OC where OC.month = 201808 and OC.course_id = CM.course_id
+      ) then 'o'
+    else 'x'
+  end as '8月'
+from CourseMaster CM
+;
+```
+</details>
