@@ -13,19 +13,7 @@ CREATE TABLE PopTbl (
 );
 ```
 
-**入力(PopTbl)**
-
-| pref_name | population |
-|:-:|-:|
-| 佐賀      |        100 |
-| 徳島      |        100 |
-| 愛媛      |        150 |
-| 東京      |        400 |
-| 福岡      |        300 |
-| 群馬      |         50 |
-| 長崎      |        200 |
-| 香川      |        200 |
-| 高知      |        200 |
+**入出力例**
 
 <details>
 <summary>INSERT文</summary>
@@ -43,17 +31,40 @@ INSERT INTO PopTbl VALUES ('群馬', 50);
 ```
 </details>
 
-**出力**
+```
+入力
+
+PopTbl
++-----------+------------+
+| pref_name | population |
++-----------+------------+
+| 佐賀      |        100 |
+| 徳島      |        100 |
+| 愛媛      |        150 |
+| 東京      |        400 |
+| 福岡      |        300 |
+| 群馬      |         50 |
+| 長崎      |        200 |
+| 香川      |        200 |
+| 高知      |        200 |
++-----------+------------+
+
+出力
+
++-----------+------------+
 | district  | population |
-|:-:|-:|
++-----------+------------+
 | 九州      |        600 |
 | 四国      |        650 |
 | その他    |        450 |
++-----------+------------+
+```
 
 <details>
 <summary>解答例</summary>
 
 ```sql
+-- 実行順はgroup by → selectだが、MySQLやPostgreSQLはselect句の列の計算を先に行っているため、問題なく実行できる
 select
   case
       when pref_name in ('徳島', '愛媛', '香川', '高知') then '四国'
@@ -75,7 +86,6 @@ group by district
 **テーブル定義**
 
 ```sql
-
 CREATE TABLE PopTbl2 (
   pref_name VARCHAR(32),
   sex CHAR(1) NOT NULL,
@@ -110,8 +120,9 @@ INSERT INTO PopTbl2 VALUES ('東京', '2', 150);
 </details>
 
 ```
-入力(PopTbl2)
+入力
 
+PopTbl2
 +-----------+-----+------------+
 | pref_name | sex | population |
 +-----------+-----+------------+
@@ -134,6 +145,7 @@ INSERT INTO PopTbl2 VALUES ('東京', '2', 150);
 +-----------+-----+------------+
 
 出力
+
 +-----------+-----------------+-------------------+
 | pref_name | male_population | female_population |
 +-----------+-----------------+-------------------+
@@ -169,7 +181,6 @@ group by pref_name
 **テーブル定義**
 
 ```sql
-
 CREATE TABLE CourseMaster (
   course_id INTEGER PRIMARY KEY,
   course_name VARCHAR(32) NOT NULL
@@ -229,6 +240,7 @@ OpenCourses
 +--------+-----------+
 
 出力
+
 +--------------+------+------+------+
 | course_name  | 6月  | 7月  | 8月  |
 +--------------+------+------+------+
