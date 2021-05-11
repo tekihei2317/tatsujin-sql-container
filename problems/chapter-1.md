@@ -1,4 +1,4 @@
-# 10章 数列
+# 1章 CASE式
 ## 本文
 ### Problem - 地方ごとの人口の合計
 
@@ -302,6 +302,118 @@ select
     else 'x'
   end as '8月'
 from CourseMaster CM
+;
+```
+</details>
+
+### Problem - メインの部活
+
+生徒が所属する部活を表すテーブル（StudentClub）が与えられます。複数の部活に入っている生徒もおり、メインの部活を表すフラグ列にはYまたはNの値が入っています。このテーブルから、次の条件でクエリを発行してください。
+
+- 1つだけの部活に所属している生徒については、そのクラブIDを取得する
+- 複数のクラブをかけ持ちしている生徒については、メインの部活のIDを取得する
+
+**テーブル定義**
+
+```sql
+CREATE TABLE StudentClub (
+  std_id INTEGER,
+  club_id INTEGER,
+  club_name VARCHAR(32),
+  main_club_flg CHAR(1),
+  PRIMARY KEY (std_id, club_id)
+);
+```
+
+**入出力例**
+
+<details>
+<summary>INSERT文</summary>
+
+```sql
+INSERT INTO StudentClub VALUES (100, 1, '野球', 'Y');
+INSERT INTO StudentClub VALUES (100, 2, '吹奏楽', 'N');
+INSERT INTO StudentClub VALUES (200, 2, '吹奏楽', 'N');
+INSERT INTO StudentClub VALUES (200, 3, 'バドミントン', 'Y');
+INSERT INTO StudentClub VALUES (200, 4, 'サッカー', 'N');
+INSERT INTO StudentClub VALUES (300, 4, 'サッカー', 'N');
+INSERT INTO StudentClub VALUES (400, 5, '水泳', 'N');
+INSERT INTO StudentClub VALUES (500, 6, '囲碁', 'N');
+```
+</details>
+
+```
+入力
+
+StudentClub
++--------+---------+--------------------+---------------+
+| std_id | club_id | club_name          | main_club_flg |
++--------+---------+--------------------+---------------+
+|    100 |       1 | 野球               | Y             |
+|    100 |       2 | 吹奏楽             | N             |
+|    200 |       2 | 吹奏楽             | N             |
+|    200 |       3 | バドミントン       | Y             |
+|    200 |       4 | サッカー           | N             |
+|    300 |       4 | サッカー           | N             |
+|    400 |       5 | 水泳               | N             |
+|    500 |       6 | 囲碁               | N             |
++--------+---------+--------------------+---------------+
+
+出力
+
++--------+--------------+
+| std_id | main_club_id |
++--------+--------------+
+|    100 |            1 |
+|    200 |            3 |
+|    300 |            4 |
+|    400 |            5 |
+|    500 |            6 |
++--------+--------------+
+```
+
+<details>
+<summary>解答例</summary>
+
+```sql
+-- 解答例1. 2回クエリを発行する
+select
+  std_id
+  , max(case when main_club_flg = 'Y' then club_id else null end)
+from StudentClub
+group by std_id
+having count(*) > 1
+union all
+select
+  std_id
+  , max(club_id)
+from StudentClub
+group by std_id
+having count(*) = 1
+;
+
+-- 解答例2. HAVING句ではなく、SELECT句で条件分岐する
+select
+  std_id
+  , case
+    when count(*) = 1 then max(club_id)
+    else max(case when main_club_flg = 'Y' then club_id else null end)
+  end as main_club_id
+from StudentClub
+group by std_id
+;
+
+-- 解答例3. 他の列の値もしたい場合は、WINDOW関数を使うとよさそう
+select
+  std_id
+  , club_id
+from (
+  select
+    *
+    , count(*) over (partition by std_id) as club_count
+  from StudentClub
+) as StudentClub
+where main_club_flg = 'Y' or club_count = 1
 ;
 ```
 </details>

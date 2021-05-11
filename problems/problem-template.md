@@ -5,7 +5,6 @@
 **テーブル定義**
 
 ```sql
-
 CREATE TABLE PopTbl2 (
   pref_name VARCHAR(32),
   sex CHAR(1) NOT NULL,
@@ -24,8 +23,9 @@ CREATE TABLE PopTbl2 (
 </details>
 
 ```
-入力(PopTbl2)
+入力
 
+PopTbl2
 +-----------+-----+------------+
 | pref_name | sex | population |
 +-----------+-----+------------+
@@ -48,6 +48,7 @@ CREATE TABLE PopTbl2 (
 +-----------+-----+------------+
 
 出力
+
 +-----------+-----------------+-------------------+
 | pref_name | male_population | female_population |
 +-----------+-----------------+-------------------+
