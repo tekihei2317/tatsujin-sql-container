@@ -2,7 +2,7 @@
 ## 本文
 ### Problem - 地方ごとの人口の合計
 
-県名と人口のテーブル（PopTbl）が与えられます。四国地方と、九州地方と、その他の地方の人口を求めてください。
+県名と人口のテーブル（PopTbl）が与えられます。各地方の人口の合計を、四国地方、九州地方、その他の地方の3つに分けて求めてください。
 
 **テーブル定義**
 
@@ -199,7 +199,6 @@ CREATE TABLE OpenCourses (
 <summary>INSERT文</summary>
 
 ```sql
-
 INSERT INTO CourseMaster VALUES (1, '経理入門');
 INSERT INTO CourseMaster VALUES (2, '財務知識');
 INSERT INTO CourseMaster VALUES (3, '簿記検定');
@@ -403,7 +402,7 @@ from StudentClub
 group by std_id
 ;
 
--- 解答例3. 他の列の値もしたい場合は、WINDOW関数を使うとよさそう
+-- 解答例3. 他の列の値もしたい場合は、WINDOW関数を使うと良さそう
 select
   std_id
   , club_id
