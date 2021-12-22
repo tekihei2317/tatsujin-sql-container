@@ -18,6 +18,15 @@ docker-compose up -d --build
 
 章ごとにデータベースが分かれています(Chapter1~Chapter10)。各データベースには、その章で使用するテーブルが入っています。
 
-また、/problems配下には、各章で登場する問題を演習形式で解けるようにまとめてあるので、ご活用ください(現在対応中です)。
-
 クエリを書くのはVSCodeに[MySQLの拡張機能](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-mysql-client2)を入れて使うのがおすすめです。
+
+## 問題一覧
+
+| 章  | 問題                                                  | 難易度 |
+| --- | ----------------------------------------------------- | ------ |
+| 1   | [地方ごとの人口の合計](./problems/chapter-1/1.md)     | ☆☆   |
+| 1   | [異なる条件の集計](./problems/chapter-1/2.md)         | ☆☆   |
+| 1   | [テーブル同士のマッチング](./problems/chapter-1/3.md) | ☆☆   |
+| 1   | [メインの部活](./problems/chapter-1/4.md)             | ☆☆☆ |
+| 2   | [商品の価格の移動平均](./problems/chapter-2/1.md)     | ☆☆   |
+| 2   | [サーバーの負荷の分析](./problems/chapter-2/2.md)     | ☆☆   |
