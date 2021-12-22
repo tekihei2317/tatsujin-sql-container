@@ -64,7 +64,7 @@ select
 from ServerLoadSample;
 
 -- パーティション = serverごと
--- フレーム　=  パーティション全体
+-- フレーム =  パーティション全体
 select
 	server,
 	load_val,
@@ -72,12 +72,12 @@ select
 from ServerLoadSample;
 
 -- パーティション = serverごと
--- フレーム　=  パーティション全体
+-- フレーム =  パーティション全体
 select
 	server,
 	load_val,
 	sum(load_val) over (partition by server order by load_val) as sum_load
 from ServerLoadSample;
 ```
-→ORDER BY句を使わなければ、フレームの範囲(集約関数の対象)がパーティション全体になるみたい  
+→ORDER BY句を使わなければ、フレームの範囲(集約関数の対象)がパーティション全体になるみたい
 (ORDER BY句を使ったときのみ、集約関数の対象がパーティションの先頭から現在行までになる)
